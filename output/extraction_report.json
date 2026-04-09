@@ -1,0 +1,517 @@
+{
+  "meta": {
+    "source_file": "tpospf.pkt",
+    "parser_version": "0.1.0",
+    "generated_at": "2026-04-09T21:15:12.322146Z"
+  },
+  "status": {
+    "success": true,
+    "partial": true,
+    "fatal_error": null
+  },
+  "counts": {
+    "signatures_detected": 4,
+    "decoded_chunks": 19,
+    "text_fragments": 19,
+    "device_candidates": 0,
+    "link_candidates": 0,
+    "notes": 0,
+    "unmapped_blocks": 0,
+    "normalized_devices": 0,
+    "normalized_links": 0
+  },
+  "fields_extracted": {
+    "device_names": 0,
+    "device_types": 0,
+    "device_positions": 0,
+    "interface_names": 0,
+    "interface_ips": 0,
+    "config_texts": 0,
+    "link_endpoints": 0
+  },
+  "missing_fields": {
+    "devices_without_name": 0,
+    "devices_without_type": 0,
+    "devices_without_position": 0,
+    "interfaces_without_ip": 0,
+    "links_with_missing_endpoints": 0
+  },
+  "suspicious_sections": [
+    {
+      "kind": "gzip",
+      "count": 3,
+      "reason": "Detected signature requires future reverse-engineering support"
+    },
+    {
+      "kind": "zlib",
+      "count": 1,
+      "reason": "Detected signature requires future reverse-engineering support"
+    }
+  ],
+  "events": {
+    "info": [
+      {
+        "message": "Inspecting input bytes",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "size_bytes": 60846
+        },
+        "timestamp": "2026-04-09T21:15:12.212667Z"
+      },
+      {
+        "message": "No in-band Packet Tracer version hint extracted",
+        "context": {
+          "source_file": "tpospf.pkt"
+        },
+        "timestamp": "2026-04-09T21:15:12.321416Z"
+      }
+    ],
+    "warnings": [
+      {
+        "message": "High entropy file content detected",
+        "context": {
+          "entropy": 7.9968
+        },
+        "timestamp": "2026-04-09T21:15:12.245273Z"
+      }
+    ],
+    "recoverable_errors": [
+      {
+        "message": "Failed to decompress candidate payload",
+        "context": {
+          "kind": "gzip",
+          "offset": 15499,
+          "error": "Unknown compression method"
+        },
+        "timestamp": "2026-04-09T21:15:12.291122Z"
+      },
+      {
+        "message": "Failed to decompress candidate payload",
+        "context": {
+          "kind": "gzip",
+          "offset": 27960,
+          "error": "Unknown compression method"
+        },
+        "timestamp": "2026-04-09T21:15:12.291528Z"
+      },
+      {
+        "message": "Failed to decompress candidate payload",
+        "context": {
+          "kind": "gzip",
+          "offset": 33611,
+          "error": "Unknown compression method"
+        },
+        "timestamp": "2026-04-09T21:15:12.297889Z"
+      },
+      {
+        "message": "Failed to decompress candidate payload",
+        "context": {
+          "kind": "zlib",
+          "offset": 39637,
+          "error": "Error -3 while decompressing data: invalid code lengths set"
+        },
+        "timestamp": "2026-04-09T21:15:12.301386Z"
+      }
+    ],
+    "fatal_errors": [],
+    "trace": [
+      {
+        "message": "Detected signature",
+        "context": {
+          "kind": "gzip",
+          "offset": 15499,
+          "confidence": 0.7
+        },
+        "timestamp": "2026-04-09T21:15:12.238817Z"
+      },
+      {
+        "message": "Detected signature",
+        "context": {
+          "kind": "gzip",
+          "offset": 27960,
+          "confidence": 0.7
+        },
+        "timestamp": "2026-04-09T21:15:12.239272Z"
+      },
+      {
+        "message": "Detected signature",
+        "context": {
+          "kind": "gzip",
+          "offset": 33611,
+          "confidence": 0.7
+        },
+        "timestamp": "2026-04-09T21:15:12.239900Z"
+      },
+      {
+        "message": "Detected signature",
+        "context": {
+          "kind": "zlib",
+          "offset": 39637,
+          "confidence": 0.7
+        },
+        "timestamp": "2026-04-09T21:15:12.241056Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0001",
+          "source": "file",
+          "offset": 1197,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.272741Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0002",
+          "source": "file",
+          "offset": 1388,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.275379Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0003",
+          "source": "file",
+          "offset": 6423,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.278272Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0004",
+          "source": "file",
+          "offset": 8430,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.279307Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0005",
+          "source": "file",
+          "offset": 10572,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.280608Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0006",
+          "source": "file",
+          "offset": 15649,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.281023Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0007",
+          "source": "file",
+          "offset": 17824,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.282510Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0008",
+          "source": "file",
+          "offset": 18291,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.282898Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0009",
+          "source": "file",
+          "offset": 21044,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.284748Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0010",
+          "source": "file",
+          "offset": 21856,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.285082Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0011",
+          "source": "file",
+          "offset": 27788,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.286104Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0012",
+          "source": "file",
+          "offset": 35158,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.286505Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0013",
+          "source": "file",
+          "offset": 36358,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.287302Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0014",
+          "source": "file",
+          "offset": 44314,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.287911Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0015",
+          "source": "file",
+          "offset": 44874,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.288417Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0016",
+          "source": "file",
+          "offset": 49395,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.288919Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0017",
+          "source": "file",
+          "offset": 50456,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.289383Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0018",
+          "source": "file",
+          "offset": 53920,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.289844Z"
+      },
+      {
+        "message": "Decoded text fragment",
+        "context": {
+          "fragment_id": "text_0019",
+          "source": "file",
+          "offset": 55282,
+          "classification": "text"
+        },
+        "timestamp": "2026-04-09T21:15:12.290263Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0001",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.301831Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0002",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.303139Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0003",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.303736Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0004",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.304211Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0005",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.305480Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0006",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.305919Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0007",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.306632Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0008",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.307084Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0009",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.307637Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0010",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.308113Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0011",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.308771Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0012",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.309703Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0013",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.310169Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0014",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.310702Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0015",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.318536Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0016",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.319105Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0017",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.319699Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0018",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.320168Z"
+      },
+      {
+        "message": "Analyzing text fragment",
+        "context": {
+          "fragment_id": "text_0019",
+          "classification": "text",
+          "source": "file"
+        },
+        "timestamp": "2026-04-09T21:15:12.320920Z"
+      }
+    ]
+  }
+}

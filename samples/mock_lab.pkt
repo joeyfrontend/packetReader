@@ -1,0 +1,29 @@
+PKTMOCK
+<?xml version="1.0" encoding="UTF-8"?>
+<topology packetTracerVersion="8.2.1">
+  <device id="d1" name="R1" type="router" x="100" y="200">
+    <interface name="GigabitEthernet0/0" ip="192.168.1.1" mask="255.255.255.0" />
+  </device>
+  <device id="d2" name="SW1" type="switch" x="260" y="200">
+    <interface name="FastEthernet0/1" />
+  </device>
+  <link id="l1" fromDevice="R1" fromInterface="GigabitEthernet0/0" toDevice="SW1" toInterface="FastEthernet0/1" type="copper" />
+</topology>
+
+hostname R1
+interface GigabitEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+!
+router ospf 1
+ network 192.168.1.0 0.0.0.255 area 0
+!
+
+hostname SW1
+interface FastEthernet0/1
+ switchport mode access
+ spanning-tree portfast
+!
+
+R1 Gi0/0 -> SW1 Fa0/1
+note: Demo branch lab

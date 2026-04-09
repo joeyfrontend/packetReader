@@ -1,0 +1,3 @@
+# No external runtime dependencies.
+# Use Python 3.11+ and the standard library test runner:
+#   python -m unittest discover -s tests -v
