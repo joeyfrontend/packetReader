@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import gzip
+import io
+import zipfile
 import zlib
 
 
@@ -59,3 +61,15 @@ def build_zlib_carved_bytes(xml_content: str, prefix: bytes = b"RANDOMHDR") -> b
 
 def build_gzip_carved_bytes(xml_content: str, prefix: bytes = b"RANDOMHDR") -> bytes:
     return prefix + gzip.compress(xml_content.encode("utf-8"))
+
+
+def build_single_byte_xor_bytes(xml_content: str, key: int = 0x5A) -> bytes:
+    data = xml_content.encode("utf-8")
+    return bytes(value ^ key for value in data)
+
+
+def build_pkz_bytes(pkt_name: str, pkt_payload: bytes) -> bytes:
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        archive.writestr(pkt_name, pkt_payload)
+    return buffer.getvalue()

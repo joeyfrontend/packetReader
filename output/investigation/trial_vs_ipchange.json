@@ -1,0 +1,1125 @@
+{
+  "pair_name": "trial_vs_trial-ipchange",
+  "generated_at": "2026-04-09T23:35:45.061301Z",
+  "left_file": {
+    "name": "trial.pkt",
+    "path": "samples\\trial.pkt",
+    "size": 47410
+  },
+  "right_file": {
+    "name": "trial-ipchange.pkt",
+    "path": "samples\\trial-ipchange.pkt",
+    "size": 47260
+  },
+  "oracle_delta": {
+    "added_devices": [],
+    "removed_devices": [],
+    "added_links": [],
+    "removed_links": [],
+    "added_ips": [
+      {
+        "device": "PC1",
+        "ip": "192.168.1.3"
+      }
+    ],
+    "removed_ips": [
+      {
+        "device": "PC1",
+        "ip": "192.168.1.2"
+      }
+    ]
+  },
+  "comparison_stats": {
+    "exact_common_prefix_bytes": 1,
+    "changed_region_count": 109,
+    "inserted_region_count": 49,
+    "deleted_region_count": 20,
+    "shifted_region_count": 0,
+    "changed_coverage_left_percent": 99.71,
+    "changed_coverage_right_percent": 99.71,
+    "changes_look": "global"
+  },
+  "identical_regions": [
+    {
+      "left_start_offset": 243,
+      "left_end_offset": 246,
+      "right_start_offset": 33479,
+      "right_end_offset": 33482,
+      "size": 3,
+      "offset_delta": 33236
+    },
+    {
+      "left_start_offset": 346,
+      "left_end_offset": 349,
+      "right_start_offset": 45244,
+      "right_end_offset": 45247,
+      "size": 3,
+      "offset_delta": 44898
+    },
+    {
+      "left_start_offset": 12235,
+      "left_end_offset": 12238,
+      "right_start_offset": 46743,
+      "right_end_offset": 46746,
+      "size": 3,
+      "offset_delta": 34508
+    },
+    {
+      "left_start_offset": 23686,
+      "left_end_offset": 23689,
+      "right_start_offset": 46959,
+      "right_end_offset": 46962,
+      "size": 3,
+      "offset_delta": 23273
+    },
+    {
+      "left_start_offset": 1,
+      "left_end_offset": 3,
+      "right_start_offset": 20582,
+      "right_end_offset": 20584,
+      "size": 2,
+      "offset_delta": 20581
+    },
+    {
+      "left_start_offset": 3,
+      "left_end_offset": 5,
+      "right_start_offset": 23722,
+      "right_end_offset": 23724,
+      "size": 2,
+      "offset_delta": 23719
+    },
+    {
+      "left_start_offset": 8,
+      "left_end_offset": 10,
+      "right_start_offset": 29986,
+      "right_end_offset": 29988,
+      "size": 2,
+      "offset_delta": 29978
+    },
+    {
+      "left_start_offset": 153,
+      "left_end_offset": 155,
+      "right_start_offset": 30530,
+      "right_end_offset": 30532,
+      "size": 2,
+      "offset_delta": 30377
+    }
+  ],
+  "shifted_regions": [],
+  "inserted_regions": [
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 0,
+        "end_offset": 0,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 0,
+        "end_offset": 315,
+        "size": 315,
+        "entropy": 7.2647,
+        "printable_ratio": 0.3492,
+        "nearby_printable_strings": [
+          "6m:;",
+          "xm)cQD",
+          "\"\\Xy",
+          "/{X>"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 1,
+        "end_offset": 1,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 316,
+        "end_offset": 20582,
+        "size": 20266,
+        "entropy": 7.991,
+        "printable_ratio": 0.3857,
+        "nearby_printable_strings": [
+          "/{X>",
+          "80P<we",
+          "DFUa",
+          "2\t.F",
+          "_e`~",
+          "EF()l"
+        ],
+        "nearby_hex_preview": "9b4823ce44f8bb510e5718b6000dc00c9ad564e8bbc3945dfeb2bebfcd6045c9f6eb5e990f3b7cb9a4ccb0625eb4e2da0e5d5ea10916b5cdacc93e58ca280ac5",
+        "signatures": [
+          {
+            "kind": "zlib",
+            "offset": 17545,
+            "absolute_offset": 17765
+          }
+        ]
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "compressed_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 3,
+        "end_offset": 3,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 20584,
+        "end_offset": 23722,
+        "size": 3138,
+        "entropy": 7.9436,
+        "printable_ratio": 0.3824,
+        "nearby_printable_strings": [
+          "DwW:L",
+          "(d.u",
+          "Cjy=",
+          "xQWjs",
+          "nJzw|o",
+          "D^n4B"
+        ],
+        "nearby_hex_preview": "baf14f5023ad6f16716839a9918053df845bccdbdc4d9d4477573a4cae7b9e28fb4b607ad349587612730ed29097b2f6523d77f97c68b24a158e08390ddcb6e2",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 5,
+        "end_offset": 5,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 23724,
+        "end_offset": 23861,
+        "size": 137,
+        "entropy": 6.5066,
+        "printable_ratio": 0.4234,
+        "nearby_printable_strings": [
+          "f^+<m",
+          "sm}\\2",
+          "gp\"jyZ",
+          "RZfoF",
+          "#^G0"
+        ],
+        "nearby_hex_preview": "145d0ff9a5d8cae69c813c8ff180e39273b51c61f2ccde046a005b4b1cddb215c491b916462810ee33d0d47297900602384aab7de0ea54727f0fb06654c3e90a",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 6,
+        "end_offset": 6,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 23862,
+        "end_offset": 23959,
+        "size": 97,
+        "entropy": 6.2494,
+        "printable_ratio": 0.3196,
+        "nearby_printable_strings": [
+          "RZfoF",
+          "#^G0",
+          ":N-0"
+        ],
+        "nearby_hex_preview": "c541d12409aaca0c5e567b928bb352dac75e708b92b3d1e063bc66a659fa9af0da54d882a7bff1bd4bcfaf525a666f46a02cc11497ba2c22ab61b0588c450c44",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 7,
+        "end_offset": 7,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 23960,
+        "end_offset": 24106,
+        "size": 146,
+        "entropy": 6.693,
+        "printable_ratio": 0.3904,
+        "nearby_printable_strings": [
+          "#^G0",
+          ":N-0",
+          "fcT"
+        ],
+        "nearby_hex_preview": "9a3f8ac69c8066bfb418077f40e3ecb7da79ea87ee807d0c27e8cc4243cf9b187e31f2235e4730ffc2f8dfed482dc2e2d72264db77a0afb7974fde67067dd6fc",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 8,
+        "end_offset": 8,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 24107,
+        "end_offset": 29986,
+        "size": 5879,
+        "entropy": 7.9711,
+        "printable_ratio": 0.3803,
+        "nearby_printable_strings": [
+          "fcT",
+          "@'~k",
+          "5i,\rV",
+          "A+r^5}",
+          "ixsenSM",
+          "wpEj"
+        ],
+        "nearby_hex_preview": "7e7b7204ab2903e3a022c04250e855f876599a0e0db1198e6bb4ee90775e7e0eaa54a14fe35a96e6218b6f5ec0cd4f9b3a6d51bdcbceb742ffbe964100735ea0",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 10,
+        "end_offset": 10,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 29988,
+        "end_offset": 30250,
+        "size": 262,
+        "entropy": 7.1063,
+        "printable_ratio": 0.3702,
+        "nearby_printable_strings": [
+          "W=S6",
+          "$(Yz>l",
+          "$JaY",
+          "em0>J,j",
+          ",u>O",
+          "oUO8"
+        ],
+        "nearby_hex_preview": "3bc34a80bce1df42337bc3f86a1a63120512cb7f64f40fca344274ba3fe441626ff8c331897ba7008115a254208e1348b314ffb214e680dd0a28b2573d533618",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    }
+  ],
+  "deleted_regions": [
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 16,
+        "end_offset": 71,
+        "size": 55,
+        "entropy": 5.5268,
+        "printable_ratio": 0.4545,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$",
+          "f'Yk",
+          "ax)D",
+          "tn{l"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 30527,
+        "end_offset": 30527,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "\\mr:j"
+        ],
+        "nearby_hex_preview": "fb9dc0257c76f042a7fcc3cfdddfc72a99f4860b2fd625272184c10eda6a7fb8d0ea536fa77b84b7ac75d88d75cc5a816fec6efccc6049ac6e35cf0ca10f9cee",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 327,
+        "end_offset": 346,
+        "size": 19,
+        "entropy": 4.1427,
+        "printable_ratio": 0.4737,
+        "nearby_printable_strings": [
+          "4lQ-7",
+          "6k|"
+        ],
+        "nearby_hex_preview": "fe3bde3b948776cc945acaaf106b1175942f5df685452c07d3d5780c8c55379d1b1302eb05fdc8adff0b346c512d37df6cf35ca3a791e0d6acb83c91503e151c",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 45244,
+        "end_offset": 45244,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "|VC<",
+          "&xjyf1Lf",
+          "W1s'"
+        ],
+        "nearby_hex_preview": "bd6445ac37cb87dc90286258e6d0772078f1e13cd35dfb2439b87c56433c072a8cf8c6b92a0426786a7966314c66e7bdd84de87bc80eb055b375d1ed440a6090",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "config_payload"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 420,
+        "end_offset": 844,
+        "size": 424,
+        "entropy": 7.5124,
+        "printable_ratio": 0.3774,
+        "nearby_printable_strings": [
+          "6k|",
+          "\\20",
+          "o+@*",
+          "Ol|*",
+          "{Y5`",
+          "yFs\\"
+        ],
+        "nearby_hex_preview": "c192511aa642a0b08523a98b362688464919bc63237015cb0b34d1cb909a0ef20df35b614bc55b57cb1f04366b7c20b7ed3e4476fc8b62529cd0fb85063108b7",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 46701,
+        "end_offset": 46701,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "1df81a20c6e1870cf7a779997f9129f8b083fa5084828c2df0f34f0a0f216850c0087959b01a6f404100fcac13fc7b48c9f1dc2c48cb77e373137c1ec7f6981c",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 845,
+        "end_offset": 1656,
+        "size": 811,
+        "entropy": 7.7685,
+        "printable_ratio": 0.3711,
+        "nearby_printable_strings": [
+          "STlv",
+          "x\\!:",
+          ";eCv]=j+MU",
+          "$O^^",
+          "'rEn",
+          "u1L|W"
+        ],
+        "nearby_hex_preview": "100620817b4f45c93a177099004aa3643185259724a293b64ca6e28b5fa95d4778b85345e7c2ed99fedcc4cbf48bf292cfc7bc59b5f2b803c05b8bd310e8d860",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 46702,
+        "end_offset": 46702,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "f81a20c6e1870cf7a779997f9129f8b083fa5084828c2df0f34f0a0f216850c0087959b01a6f404100fcac13fc7b48c9f1dc2c48cb77e373137c1ec7f6981c3b",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 2108,
+        "end_offset": 2887,
+        "size": 779,
+        "entropy": 7.7267,
+        "printable_ratio": 0.3736,
+        "nearby_printable_strings": [
+          "1M4Nn&",
+          "m\\{5",
+          "X,&j",
+          "6*M%",
+          "{W?8,",
+          "F+(X*"
+        ],
+        "nearby_hex_preview": "a8dc8bad3ab5ffd2bff1e13c1329229b5b970fcb10f27b0dd0b6cf4bab57e3c116d801cd2c43201a7ae830fd8d23d4f4bf7e5ba8d90c77dd731e5026498924c5",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 46720,
+        "end_offset": 46720,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "5084828c2df0f34f0a0f216850c0087959b01a6f404100fcac13fc7b48c9f1dc2c48cb77e373137c1ec7f6981c3b030fab1c8bd8037110d4df91d68bd80ccdae",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 2889,
+        "end_offset": 2941,
+        "size": 52,
+        "entropy": 5.5466,
+        "printable_ratio": 0.3654,
+        "nearby_printable_strings": [
+          "F+(X*",
+          "\"Y't",
+          "VKI*"
+        ],
+        "nearby_hex_preview": "462b28582aba6a6975df70b759866e1588f7dc54ff5e114bc745b4bd0db003ffcc73914648a9e686617c6e9023bb7148879321dbe5881f035dee4365a5139870",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 46722,
+        "end_offset": 46722,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "828c2df0f34f0a0f216850c0087959b01a6f404100fcac13fc7b48c9f1dc2c48cb77e373137c1ec7f6981c3b030fab1c8bd8037110d4df91d68bd80ccdae0d23",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "config_payload"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 2990,
+        "end_offset": 3076,
+        "size": 86,
+        "entropy": 6.1937,
+        "printable_ratio": 0.4419,
+        "nearby_printable_strings": [
+          "VKI*",
+          ".dT:b",
+          "%,iZs",
+          "`go}",
+          "rLb(,C"
+        ],
+        "nearby_hex_preview": "d47a54c1f993267a6594cf1ab7a76a4814fe94565c122f05613bfee087c05e084ae8d115bf9996f44968f68bd3574db394077690b48eee470e91884896c9f87b",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 46728,
+        "end_offset": 46728,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "0a0f216850c0087959b01a6f404100fcac13fc7b48c9f1dc2c48cb77e373137c1ec7f6981c3b030fab1c8bd8037110d4df91d68bd80ccdae0d230b1b709f1854",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 3077,
+        "end_offset": 3129,
+        "size": 52,
+        "entropy": 5.4697,
+        "printable_ratio": 0.3654,
+        "nearby_printable_strings": [
+          "VKI*",
+          ".dT:b",
+          "%,iZs",
+          "`go}",
+          "rLb(,C"
+        ],
+        "nearby_hex_preview": "de5f67aee0e4d4f79254f9b6e562caa57c8d9b6dff895f7e6a907635fe7c113e2639f0460e10b1b4fecd86ce11e6e482b7bd564b492a8738d40b531a08e82e64",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 46729,
+        "end_offset": 46729,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "0f216850c0087959b01a6f404100fcac13fc7b48c9f1dc2c48cb77e373137c1ec7f6981c3b030fab1c8bd8037110d4df91d68bd80ccdae0d230b1b709f1854da",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "config_payload"
+    }
+  ],
+  "changed_regions": [
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 0,
+        "end_offset": 0,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 0,
+        "end_offset": 315,
+        "size": 315,
+        "entropy": 7.2647,
+        "printable_ratio": 0.3492,
+        "nearby_printable_strings": [
+          "6m:;",
+          "xm)cQD",
+          "\"\\Xy",
+          "/{X>"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 1,
+        "end_offset": 1,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 316,
+        "end_offset": 20582,
+        "size": 20266,
+        "entropy": 7.991,
+        "printable_ratio": 0.3857,
+        "nearby_printable_strings": [
+          "/{X>",
+          "80P<we",
+          "DFUa",
+          "2\t.F",
+          "_e`~",
+          "EF()l"
+        ],
+        "nearby_hex_preview": "9b4823ce44f8bb510e5718b6000dc00c9ad564e8bbc3945dfeb2bebfcd6045c9f6eb5e990f3b7cb9a4ccb0625eb4e2da0e5d5ea10916b5cdacc93e58ca280ac5",
+        "signatures": [
+          {
+            "kind": "zlib",
+            "offset": 17545,
+            "absolute_offset": 17765
+          }
+        ]
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "compressed_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 3,
+        "end_offset": 3,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 20584,
+        "end_offset": 23722,
+        "size": 3138,
+        "entropy": 7.9436,
+        "printable_ratio": 0.3824,
+        "nearby_printable_strings": [
+          "DwW:L",
+          "(d.u",
+          "Cjy=",
+          "xQWjs",
+          "nJzw|o",
+          "D^n4B"
+        ],
+        "nearby_hex_preview": "baf14f5023ad6f16716839a9918053df845bccdbdc4d9d4477573a4cae7b9e28fb4b607ad349587612730ed29097b2f6523d77f97c68b24a158e08390ddcb6e2",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 5,
+        "end_offset": 5,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 23724,
+        "end_offset": 23861,
+        "size": 137,
+        "entropy": 6.5066,
+        "printable_ratio": 0.4234,
+        "nearby_printable_strings": [
+          "f^+<m",
+          "sm}\\2",
+          "gp\"jyZ",
+          "RZfoF",
+          "#^G0"
+        ],
+        "nearby_hex_preview": "145d0ff9a5d8cae69c813c8ff180e39273b51c61f2ccde046a005b4b1cddb215c491b916462810ee33d0d47297900602384aab7de0ea54727f0fb06654c3e90a",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 6,
+        "end_offset": 6,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 23862,
+        "end_offset": 23959,
+        "size": 97,
+        "entropy": 6.2494,
+        "printable_ratio": 0.3196,
+        "nearby_printable_strings": [
+          "RZfoF",
+          "#^G0",
+          ":N-0"
+        ],
+        "nearby_hex_preview": "c541d12409aaca0c5e567b928bb352dac75e708b92b3d1e063bc66a659fa9af0da54d882a7bff1bd4bcfaf525a666f46a02cc11497ba2c22ab61b0588c450c44",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 7,
+        "end_offset": 7,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 23960,
+        "end_offset": 24106,
+        "size": 146,
+        "entropy": 6.693,
+        "printable_ratio": 0.3904,
+        "nearby_printable_strings": [
+          "#^G0",
+          ":N-0",
+          "fcT"
+        ],
+        "nearby_hex_preview": "9a3f8ac69c8066bfb418077f40e3ecb7da79ea87ee807d0c27e8cc4243cf9b187e31f2235e4730ffc2f8dfed482dc2e2d72264db77a0afb7974fde67067dd6fc",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 8,
+        "end_offset": 8,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 24107,
+        "end_offset": 29986,
+        "size": 5879,
+        "entropy": 7.9711,
+        "printable_ratio": 0.3803,
+        "nearby_printable_strings": [
+          "fcT",
+          "@'~k",
+          "5i,\rV",
+          "A+r^5}",
+          "ixsenSM",
+          "wpEj"
+        ],
+        "nearby_hex_preview": "7e7b7204ab2903e3a022c04250e855f876599a0e0db1198e6bb4ee90775e7e0eaa54a14fe35a96e6218b6f5ec0cd4f9b3a6d51bdcbceb742ffbe964100735ea0",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 10,
+        "end_offset": 10,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 29988,
+        "end_offset": 30250,
+        "size": 262,
+        "entropy": 7.1063,
+        "printable_ratio": 0.3702,
+        "nearby_printable_strings": [
+          "W=S6",
+          "$(Yz>l",
+          "$JaY",
+          "em0>J,j",
+          ",u>O",
+          "oUO8"
+        ],
+        "nearby_hex_preview": "3bc34a80bce1df42337bc3f86a1a63120512cb7f64f40fca344274ba3fe441626ff8c331897ba7008115a254208e1348b314ffb214e680dd0a28b2573d533618",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    }
+  ],
+  "high_change_windows": [
+    {
+      "start_offset": 0,
+      "end_offset": 256,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.195,
+      "right_entropy": 7.1073
+    },
+    {
+      "start_offset": 256,
+      "end_offset": 512,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1819,
+      "right_entropy": 7.2156
+    },
+    {
+      "start_offset": 512,
+      "end_offset": 768,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1609,
+      "right_entropy": 7.1188
+    },
+    {
+      "start_offset": 2048,
+      "end_offset": 2304,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1452,
+      "right_entropy": 7.2077
+    },
+    {
+      "start_offset": 2304,
+      "end_offset": 2560,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.237,
+      "right_entropy": 7.1832
+    },
+    {
+      "start_offset": 2816,
+      "end_offset": 3072,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1229,
+      "right_entropy": 7.1764
+    },
+    {
+      "start_offset": 3072,
+      "end_offset": 3328,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.2322,
+      "right_entropy": 7.2229
+    },
+    {
+      "start_offset": 4352,
+      "end_offset": 4608,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1887,
+      "right_entropy": 7.2047
+    }
+  ],
+  "investigator_notes": {
+    "pair_focus": "single_ip_change",
+    "semantic_oracle_delta": {
+      "added_devices": [],
+      "removed_devices": [],
+      "added_links": [],
+      "removed_links": [],
+      "added_ips": [
+        {
+          "device": "PC1",
+          "ip": "192.168.1.3"
+        }
+      ],
+      "removed_ips": [
+        {
+          "device": "PC1",
+          "ip": "192.168.1.2"
+        }
+      ]
+    },
+    "likely_ip_change_regions": [
+      {
+        "left_start_offset": 0,
+        "right_start_offset": 0,
+        "candidate_type": "unknown",
+        "left_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "right_strings": [
+          "6m:;",
+          "xm)cQD",
+          "\"\\Xy"
+        ]
+      },
+      {
+        "left_start_offset": 5,
+        "right_start_offset": 23724,
+        "candidate_type": "unknown",
+        "left_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "right_strings": [
+          "f^+<m",
+          "sm}\\2",
+          "gp\"jyZ"
+        ]
+      },
+      {
+        "left_start_offset": 6,
+        "right_start_offset": 23862,
+        "candidate_type": "unknown",
+        "left_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "right_strings": [
+          "RZfoF",
+          "#^G0",
+          ":N-0"
+        ]
+      }
+    ],
+    "likely_topology_change_regions": [
+      {
+        "left_start_offset": 1,
+        "right_start_offset": 316,
+        "candidate_type": "compressed_payload",
+        "size": 20266
+      },
+      {
+        "left_start_offset": 3,
+        "right_start_offset": 20584,
+        "candidate_type": "unknown",
+        "size": 3138
+      },
+      {
+        "left_start_offset": 8,
+        "right_start_offset": 24107,
+        "candidate_type": "unknown",
+        "size": 5879
+      }
+    ],
+    "change_pattern_assessment": "Small localized change windows are the strongest candidate for the PC IP delta.",
+    "structure_hypothesis": "one_monolithic_encoded_payload",
+    "next_decoder_hypothesis": "Focus on whole-file container transforms or chunk tables before trying finer-grained extraction.",
+    "top_windows": [
+      {
+        "start_offset": 0,
+        "end_offset": 256,
+        "size": 256,
+        "percent_changed": 100.0,
+        "left_entropy": 7.195,
+        "right_entropy": 7.1073
+      },
+      {
+        "start_offset": 256,
+        "end_offset": 512,
+        "size": 256,
+        "percent_changed": 100.0,
+        "left_entropy": 7.1819,
+        "right_entropy": 7.2156
+      },
+      {
+        "start_offset": 512,
+        "end_offset": 768,
+        "size": 256,
+        "percent_changed": 100.0,
+        "left_entropy": 7.1609,
+        "right_entropy": 7.1188
+      }
+    ],
+    "pair_samples": [
+      "trial.pkt",
+      "trial-ipchange.pkt"
+    ]
+  }
+}

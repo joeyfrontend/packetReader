@@ -9,6 +9,7 @@ from app.report import ReportBuilder
 from tests.helpers import (
     LEGACY_PACKET_TRACER_XML,
     build_gzip_carved_bytes,
+    build_single_byte_xor_bytes,
     build_zlib_carved_bytes,
     encode_pkt_bytes,
 )
@@ -58,6 +59,24 @@ class PktDecoderTests(unittest.TestCase):
         self.assertTrue(result.success)
         self.assertEqual(result.strategy_name, "gzip_carve")
         self.assertTrue(any(attempt.strategy_name == "gzip_carve" and attempt.success for attempt in result.attempts))
+
+    def test_single_byte_xor_probe_can_recover_xml(self) -> None:
+        report = ReportBuilder(debug=False)
+        result = decode_pkt_bytes(
+            build_single_byte_xor_bytes(LEGACY_PACKET_TRACER_XML, key=0x5A),
+            "xor-probe.pkt",
+            report=report,
+        )
+
+        self.assertTrue(result.success)
+        self.assertEqual(result.strategy_name, "single_byte_xor_probe")
+        self.assertEqual(result.debug_info.get("xor_key"), 0x5A)
+        self.assertTrue(
+            any(
+                attempt.strategy_name == "single_byte_xor_probe" and attempt.success
+                for attempt in result.attempts
+            )
+        )
 
     def test_corrupted_input_returns_failure(self) -> None:
         report = ReportBuilder(debug=False)

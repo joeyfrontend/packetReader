@@ -1,0 +1,1177 @@
+{
+  "pair_name": "trial_vs_trial-router",
+  "generated_at": "2026-04-09T23:36:07.480579Z",
+  "left_file": {
+    "name": "trial.pkt",
+    "path": "samples\\trial.pkt",
+    "size": 47410
+  },
+  "right_file": {
+    "name": "trial-router.pkt",
+    "path": "samples\\trial-router.pkt",
+    "size": 49375
+  },
+  "oracle_delta": {
+    "added_devices": [
+      "Router0"
+    ],
+    "removed_devices": [],
+    "added_links": [
+      [
+        "Router0",
+        "Switch0"
+      ],
+      [
+        "Router0",
+        "Switch1"
+      ]
+    ],
+    "removed_links": [
+      [
+        "Switch0",
+        "Switch1"
+      ]
+    ],
+    "added_ips": [
+      {
+        "device": "Router0",
+        "ip": "192.168.1.254"
+      },
+      {
+        "device": "Router0",
+        "ip": "192.168.2.254"
+      }
+    ],
+    "removed_ips": [
+      {
+        "device": "PC0",
+        "ip": "192.168.1.1"
+      },
+      {
+        "device": "PC1",
+        "ip": "192.168.1.2"
+      }
+    ]
+  },
+  "comparison_stats": {
+    "exact_common_prefix_bytes": 2,
+    "changed_region_count": 148,
+    "inserted_region_count": 43,
+    "deleted_region_count": 31,
+    "shifted_region_count": 0,
+    "changed_coverage_left_percent": 99.62,
+    "changed_coverage_right_percent": 99.64,
+    "changes_look": "global"
+  },
+  "identical_regions": [
+    {
+      "left_start_offset": 412,
+      "left_end_offset": 415,
+      "right_start_offset": 42648,
+      "right_end_offset": 42651,
+      "size": 3,
+      "offset_delta": 42236
+    },
+    {
+      "left_start_offset": 4851,
+      "left_end_offset": 4854,
+      "right_start_offset": 47411,
+      "right_end_offset": 47414,
+      "size": 3,
+      "offset_delta": 42560
+    },
+    {
+      "left_start_offset": 39938,
+      "left_end_offset": 39941,
+      "right_start_offset": 48706,
+      "right_end_offset": 48709,
+      "size": 3,
+      "offset_delta": 8768
+    },
+    {
+      "left_start_offset": 40696,
+      "left_end_offset": 40699,
+      "right_start_offset": 49043,
+      "right_end_offset": 49046,
+      "size": 3,
+      "offset_delta": 8347
+    },
+    {
+      "left_start_offset": 0,
+      "left_end_offset": 2,
+      "right_start_offset": 6092,
+      "right_end_offset": 6094,
+      "size": 2,
+      "offset_delta": 6092
+    },
+    {
+      "left_start_offset": 2,
+      "left_end_offset": 4,
+      "right_start_offset": 6996,
+      "right_end_offset": 6998,
+      "size": 2,
+      "offset_delta": 6994
+    },
+    {
+      "left_start_offset": 4,
+      "left_end_offset": 6,
+      "right_start_offset": 11475,
+      "right_end_offset": 11477,
+      "size": 2,
+      "offset_delta": 11471
+    },
+    {
+      "left_start_offset": 6,
+      "left_end_offset": 8,
+      "right_start_offset": 40337,
+      "right_end_offset": 40339,
+      "size": 2,
+      "offset_delta": 40331
+    }
+  ],
+  "shifted_regions": [],
+  "inserted_regions": [
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 0,
+        "end_offset": 0,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 0,
+        "end_offset": 6092,
+        "size": 6092,
+        "entropy": 7.9707,
+        "printable_ratio": 0.3743,
+        "nearby_printable_strings": [
+          ";aIr%v",
+          "J&(!",
+          "+s8U",
+          "d)bT",
+          "_xZ+",
+          "C8=U"
+        ],
+        "nearby_hex_preview": "f2db5ce57b902bcb9f464291c9293422d3dee67cdf063b6149722576069c8640f6f5bdaaf3064edeb405e555937c84496537db54acfbf19157f2159c812d1c16",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 2,
+        "end_offset": 2,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 6094,
+        "end_offset": 6996,
+        "size": 902,
+        "entropy": 7.7826,
+        "printable_ratio": 0.3825,
+        "nearby_printable_strings": [
+          "@epB",
+          "M>#H",
+          "BLr!Xi",
+          "@WVe",
+          "@Uqjv",
+          "twDy"
+        ],
+        "nearby_hex_preview": "63789b28d533ad40657042cd89fdff7bad7fd444084d3e234820faedaeb469fe15e5aa5ed92fa5c9ec65ce38ec08767d83f3c0fd7feb424c72215869f9c7af0a",
+        "signatures": [
+          {
+            "kind": "zlib",
+            "offset": 249,
+            "absolute_offset": 6247
+          }
+        ]
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "compressed_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 4,
+        "end_offset": 4,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 6998,
+        "end_offset": 11475,
+        "size": 4477,
+        "entropy": 7.9599,
+        "printable_ratio": 0.3735,
+        "nearby_printable_strings": [
+          "ZS|-!",
+          "CTg6",
+          "974`",
+          "]*\tl",
+          "$ueu)",
+          "@$WI"
+        ],
+        "nearby_hex_preview": "d97ba0459fac48d11319935a537c2d2190634675f5b41dc5814b164401f8a95d629fd5bb2ddf72ced0561b9ae6cdbc721ac927bc0b6858cfa26d65aac35d8fe4",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 6,
+        "end_offset": 6,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 11477,
+        "end_offset": 40337,
+        "size": 28860,
+        "entropy": 7.993,
+        "printable_ratio": 0.38,
+        "nearby_printable_strings": [
+          "w\n#<",
+          "vl<`",
+          "G\r O",
+          "q%:M",
+          "6d@#t",
+          "Nw<`"
+        ],
+        "nearby_hex_preview": "8d81638df3613c7bd83a5a331dd2ab56b113c509ab93276cc8e9d1c5e5ad95eba253dd7bf9c2489197ccad7b9471d928da3520a7bfb6fa5942e0af3546d4c8a1",
+        "signatures": [
+          {
+            "kind": "zlib",
+            "offset": 8838,
+            "absolute_offset": 20219
+          }
+        ]
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "compressed_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 8,
+        "end_offset": 8,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 40339,
+        "end_offset": 40646,
+        "size": 307,
+        "entropy": 7.401,
+        "printable_ratio": 0.3876,
+        "nearby_printable_strings": [
+          "/N,0H",
+          ")Aeh",
+          "h'W%",
+          "rO(i",
+          "a\r%)"
+        ],
+        "nearby_hex_preview": "03993320d042f4ee17beedd51a83a004436bc4e6932aeee7279a77c8baf843f0f19bff0ee1f25cf383bb99349a2781f08ad9571a800b564e84a1e1c2c4ec1db5",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 9,
+        "end_offset": 9,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 40647,
+        "end_offset": 40809,
+        "size": 162,
+        "entropy": 6.7717,
+        "printable_ratio": 0.3395,
+        "nearby_printable_strings": [
+          "a\r%)"
+        ],
+        "nearby_hex_preview": "3335a4699f8173f0b1b7585251d7bdbf3ecdb52c8ff57e1db78e02e04cf02793e387c624afd3641b783eac37e106b660095319c298649932e324aa1433bc46e1",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 10,
+        "end_offset": 10,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 40810,
+        "end_offset": 40834,
+        "size": 24,
+        "entropy": 4.4183,
+        "printable_ratio": 0.5,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "5bb43910b5e58a2c37fc8c02b0383cbb91949c093779b5f2b9bf83f89f8ddcbde6afe98221de8f099d30518801daefdff5d904dae31db8a7f901f050e0441660",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 11,
+        "end_offset": 11,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 40835,
+        "end_offset": 41151,
+        "size": 316,
+        "entropy": 7.3225,
+        "printable_ratio": 0.4241,
+        "nearby_printable_strings": [
+          "W)]s",
+          "mC^$?.",
+          "tBx&G)",
+          "*_u}",
+          "^s-K'u",
+          "0\rAzjes"
+        ],
+        "nearby_hex_preview": "bf83f89f8ddcbde6afe98221de8f099d30518801daefdff5d904dae31db8a7f901f050e04416606a78e9852c5e86cae00065e7456e91e72713136f2610ce035f",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    }
+  ],
+  "deleted_regions": [
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 128,
+        "end_offset": 224,
+        "size": 96,
+        "entropy": 6.3479,
+        "printable_ratio": 0.4062,
+        "nearby_printable_strings": [
+          "8eWz$",
+          "f'Yk",
+          "ax)D",
+          "tn{l",
+          "t`Z^",
+          "4lQ-7"
+        ],
+        "nearby_hex_preview": "55dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a5286472462eaf114394f727f4f46ade72ea293f4cf190989a50d3865577a24877ae847",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 42571,
+        "end_offset": 42571,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "WDOA"
+        ],
+        "nearby_hex_preview": "ebf093d3dd3adbd2d466c397d9824dee420f673b4dc6fa3f20a29474e9ecb4c00f17bc37a0102ebf1ea7561edbdbfbf262b857444f4181ba6309b5b0fc2658a0",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 276,
+        "end_offset": 353,
+        "size": 77,
+        "entropy": 6.033,
+        "printable_ratio": 0.3506,
+        "nearby_printable_strings": [
+          "t`Z^",
+          "4lQ-7",
+          "6k|"
+        ],
+        "nearby_hex_preview": "97af5b649c8b33bcb161310f7ae72168c9c79dce2d79175b8ee820ebdf32291a09b8fbd374605a5eb7f6cbdac549d3f26b67f9fe3bde3b948776cc945acaaf10",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 42646,
+        "end_offset": 42646,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "?1c~"
+        ],
+        "nearby_hex_preview": "3aeb9927240caf6eb99f32cf697d641ea0d25310d4c549a0ce6651dd7835a5cabbbefa9304b1b9e60dcff91c0092b14a26b93f58f2ba25c2e87df88b0056af07",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 633,
+        "end_offset": 636,
+        "size": 3,
+        "entropy": 1.585,
+        "printable_ratio": 0.3333,
+        "nearby_printable_strings": [
+          "o+@*",
+          "Ol|*",
+          "{Y5`"
+        ],
+        "nearby_hex_preview": "680c1dac3aee1bf6eed1357d601285c8d0f2aa42e58522b93b1c3842cd0a5b0694c5da3847acdf5508dc41d2ea6c54b38d14e496e0a06cb36f2b402a9476a449",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 46919,
+        "end_offset": 46919,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "619beea873f2578f5926a042ae40ff8cc8c73269c171f57a95157d40d226df80b6c77a820c700fdf78630063a1e3b20a8049b74b26a802d4a2eb0b85aa473183",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 822,
+        "end_offset": 855,
+        "size": 33,
+        "entropy": 5.0444,
+        "printable_ratio": 0.4545,
+        "nearby_printable_strings": [
+          "{Y5`",
+          "yFs\\"
+        ],
+        "nearby_hex_preview": "087b593560ed122a0fdd5cdb35d109ae7946735ce38e3e100620817b4f45c93a177099004aa3643185259724a293b64ca6e28b5fa95d4778b85345e7c2ed99fe",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 47402,
+        "end_offset": 47402,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "^qf;",
+          "rUe^^PT"
+        ],
+        "nearby_hex_preview": "78684ab472b609ab28da60d28e5223c98d23ba497176ddaa0dc0147636d3f04b4d1c24dbc4797e822749070bdf84918278945cd2c694396c4e92ca33a7c20046",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 911,
+        "end_offset": 1197,
+        "size": 286,
+        "entropy": 7.2763,
+        "printable_ratio": 0.3462,
+        "nearby_printable_strings": [
+          "STlv",
+          "x\\!:"
+        ],
+        "nearby_hex_preview": "abf9005740881b5706393b987b8bd544a1f06a410f31f5885c5a89a7e11e361675cb58efbf3dc166b330ba61f0957d88d836f0ab0ab9e3d7674d2a9c138e77cd",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 47410,
+        "end_offset": 47410,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "^qf;",
+          "rUe^^PT"
+        ],
+        "nearby_hex_preview": "28da60d28e5223c98d23ba497176ddaa0dc0147636d3f04b4d1c24dbc4797e822749070bdf84918278945cd2c694396c4e92ca33a7c20046a8c14e742cd4c723",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 1198,
+        "end_offset": 4851,
+        "size": 3653,
+        "entropy": 7.9529,
+        "printable_ratio": 0.3819,
+        "nearby_printable_strings": [
+          "STlv",
+          "x\\!:",
+          ";eCv]=j+MU",
+          "$O^^",
+          "'rEn",
+          "u1L|W"
+        ],
+        "nearby_hex_preview": "1f718c15146c691bfc55e5b20d783fa13b69a5b84458520fecc385fe68982322bfde248f73f53ff91a63963f2986cfcaa3a70d66be823b0641be9bd11c2fe17c",
+        "signatures": [
+          {
+            "kind": "zlib",
+            "offset": 3566,
+            "absolute_offset": 4668
+          }
+        ]
+      },
+      "right": {
+        "start_offset": 47411,
+        "end_offset": 47411,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "^qf;",
+          "rUe^^PT"
+        ],
+        "nearby_hex_preview": "da60d28e5223c98d23ba497176ddaa0dc0147636d3f04b4d1c24dbc4797e822749070bdf84918278945cd2c694396c4e92ca33a7c20046a8c14e742cd4c72336",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "compressed_payload"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 4946,
+        "end_offset": 6822,
+        "size": 1876,
+        "entropy": 7.9054,
+        "printable_ratio": 0.3827,
+        "nearby_printable_strings": [
+          "O[[",
+          "R}6be",
+          "Y\tVh'",
+          "0'\nR",
+          "+Bul",
+          "X\rQd"
+        ],
+        "nearby_hex_preview": "55d016991b8609810a4f5b5b1c9bbbeb600c7349ffc9e1e9ac493cd503ed527d3662659cd950b08b2380a95909566827fbb1a833a1823efb7f506ea5c2aaeaef",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 48648,
+        "end_offset": 48648,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "0d38f68e724eb54fe923d4720b85bc674e2fd4a05d1a18ff3ed1c475cadfe4e5fdf5f5226efb1cca0d58ebc93ceb469a0935e43c132a8d4bee43fefca56d6d0d",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 6824,
+        "end_offset": 6858,
+        "size": 34,
+        "entropy": 5.0286,
+        "printable_ratio": 0.4118,
+        "nearby_printable_strings": [
+          "D\n7DU",
+          "kY:-",
+          "qM]r",
+          "y\"d/"
+        ],
+        "nearby_hex_preview": "4662a2bfe8452f8c891b28ca8ad4fe14c32c6bd195b8ac432b119034aa1db41191a3df10b9c6830569709aea7ea4ebef0ad08d376ee108d8e5ef228503f812bf",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 48650,
+        "end_offset": 48650,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "f68e724eb54fe923d4720b85bc674e2fd4a05d1a18ff3ed1c475cadfe4e5fdf5f5226efb1cca0d58ebc93ceb469a0935e43c132a8d4bee43fefca56d6d0d9054",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    }
+  ],
+  "changed_regions": [
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 0,
+        "end_offset": 0,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 0,
+        "end_offset": 6092,
+        "size": 6092,
+        "entropy": 7.9707,
+        "printable_ratio": 0.3743,
+        "nearby_printable_strings": [
+          ";aIr%v",
+          "J&(!",
+          "+s8U",
+          "d)bT",
+          "_xZ+",
+          "C8=U"
+        ],
+        "nearby_hex_preview": "f2db5ce57b902bcb9f464291c9293422d3dee67cdf063b6149722576069c8640f6f5bdaaf3064edeb405e555937c84496537db54acfbf19157f2159c812d1c16",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 2,
+        "end_offset": 2,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 6094,
+        "end_offset": 6996,
+        "size": 902,
+        "entropy": 7.7826,
+        "printable_ratio": 0.3825,
+        "nearby_printable_strings": [
+          "@epB",
+          "M>#H",
+          "BLr!Xi",
+          "@WVe",
+          "@Uqjv",
+          "twDy"
+        ],
+        "nearby_hex_preview": "63789b28d533ad40657042cd89fdff7bad7fd444084d3e234820faedaeb469fe15e5aa5ed92fa5c9ec65ce38ec08767d83f3c0fd7feb424c72215869f9c7af0a",
+        "signatures": [
+          {
+            "kind": "zlib",
+            "offset": 249,
+            "absolute_offset": 6247
+          }
+        ]
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "compressed_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 4,
+        "end_offset": 4,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 6998,
+        "end_offset": 11475,
+        "size": 4477,
+        "entropy": 7.9599,
+        "printable_ratio": 0.3735,
+        "nearby_printable_strings": [
+          "ZS|-!",
+          "CTg6",
+          "974`",
+          "]*\tl",
+          "$ueu)",
+          "@$WI"
+        ],
+        "nearby_hex_preview": "d97ba0459fac48d11319935a537c2d2190634675f5b41dc5814b164401f8a95d629fd5bb2ddf72ced0561b9ae6cdbc721ac927bc0b6858cfa26d65aac35d8fe4",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 6,
+        "end_offset": 6,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 11477,
+        "end_offset": 40337,
+        "size": 28860,
+        "entropy": 7.993,
+        "printable_ratio": 0.38,
+        "nearby_printable_strings": [
+          "w\n#<",
+          "vl<`",
+          "G\r O",
+          "q%:M",
+          "6d@#t",
+          "Nw<`"
+        ],
+        "nearby_hex_preview": "8d81638df3613c7bd83a5a331dd2ab56b113c509ab93276cc8e9d1c5e5ad95eba253dd7bf9c2489197ccad7b9471d928da3520a7bfb6fa5942e0af3546d4c8a1",
+        "signatures": [
+          {
+            "kind": "zlib",
+            "offset": 8838,
+            "absolute_offset": 20219
+          }
+        ]
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "compressed_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 8,
+        "end_offset": 8,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 40339,
+        "end_offset": 40646,
+        "size": 307,
+        "entropy": 7.401,
+        "printable_ratio": 0.3876,
+        "nearby_printable_strings": [
+          "/N,0H",
+          ")Aeh",
+          "h'W%",
+          "rO(i",
+          "a\r%)"
+        ],
+        "nearby_hex_preview": "03993320d042f4ee17beedd51a83a004436bc4e6932aeee7279a77c8baf843f0f19bff0ee1f25cf383bb99349a2781f08ad9571a800b564e84a1e1c2c4ec1db5",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 9,
+        "end_offset": 9,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 40647,
+        "end_offset": 40809,
+        "size": 162,
+        "entropy": 6.7717,
+        "printable_ratio": 0.3395,
+        "nearby_printable_strings": [
+          "a\r%)"
+        ],
+        "nearby_hex_preview": "3335a4699f8173f0b1b7585251d7bdbf3ecdb52c8ff57e1db78e02e04cf02793e387c624afd3641b783eac37e106b660095319c298649932e324aa1433bc46e1",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 10,
+        "end_offset": 10,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 40810,
+        "end_offset": 40834,
+        "size": 24,
+        "entropy": 4.4183,
+        "printable_ratio": 0.5,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "5bb43910b5e58a2c37fc8c02b0383cbb91949c093779b5f2b9bf83f89f8ddcbde6afe98221de8f099d30518801daefdff5d904dae31db8a7f901f050e0441660",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 11,
+        "end_offset": 11,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "nearby_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 40835,
+        "end_offset": 41151,
+        "size": 316,
+        "entropy": 7.3225,
+        "printable_ratio": 0.4241,
+        "nearby_printable_strings": [
+          "W)]s",
+          "mC^$?.",
+          "tBx&G)",
+          "*_u}",
+          "^s-K'u",
+          "0\rAzjes"
+        ],
+        "nearby_hex_preview": "bf83f89f8ddcbde6afe98221de8f099d30518801daefdff5d904dae31db8a7f901f050e04416606a78e9852c5e86cae00065e7456e91e72713136f2610ce035f",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "topology_payload"
+    }
+  ],
+  "high_change_windows": [
+    {
+      "start_offset": 512,
+      "end_offset": 768,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1609,
+      "right_entropy": 7.1516
+    },
+    {
+      "start_offset": 1792,
+      "end_offset": 2048,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.2233,
+      "right_entropy": 7.16
+    },
+    {
+      "start_offset": 2560,
+      "end_offset": 2816,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.152,
+      "right_entropy": 7.2
+    },
+    {
+      "start_offset": 3072,
+      "end_offset": 3328,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.2322,
+      "right_entropy": 7.1189
+    },
+    {
+      "start_offset": 4096,
+      "end_offset": 4352,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.2092,
+      "right_entropy": 7.2088
+    },
+    {
+      "start_offset": 4352,
+      "end_offset": 4608,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1887,
+      "right_entropy": 7.2265
+    },
+    {
+      "start_offset": 7168,
+      "end_offset": 7424,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.2255,
+      "right_entropy": 7.2556
+    },
+    {
+      "start_offset": 8448,
+      "end_offset": 8704,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1776,
+      "right_entropy": 7.1233
+    }
+  ],
+  "investigator_notes": {
+    "pair_focus": "topology_expansion",
+    "semantic_oracle_delta": {
+      "added_devices": [
+        "Router0"
+      ],
+      "removed_devices": [],
+      "added_links": [
+        [
+          "Router0",
+          "Switch0"
+        ],
+        [
+          "Router0",
+          "Switch1"
+        ]
+      ],
+      "removed_links": [
+        [
+          "Switch0",
+          "Switch1"
+        ]
+      ],
+      "added_ips": [
+        {
+          "device": "Router0",
+          "ip": "192.168.1.254"
+        },
+        {
+          "device": "Router0",
+          "ip": "192.168.2.254"
+        }
+      ],
+      "removed_ips": [
+        {
+          "device": "PC0",
+          "ip": "192.168.1.1"
+        },
+        {
+          "device": "PC1",
+          "ip": "192.168.1.2"
+        }
+      ]
+    },
+    "likely_ip_change_regions": [
+      {
+        "left_start_offset": 8,
+        "right_start_offset": 40339,
+        "candidate_type": "topology_payload",
+        "left_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "right_strings": [
+          "/N,0H",
+          ")Aeh",
+          "h'W%"
+        ]
+      },
+      {
+        "left_start_offset": 9,
+        "right_start_offset": 40647,
+        "candidate_type": "topology_payload",
+        "left_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "right_strings": [
+          "a\r%)"
+        ]
+      },
+      {
+        "left_start_offset": 10,
+        "right_start_offset": 40810,
+        "candidate_type": "metadata",
+        "left_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "right_strings": []
+      }
+    ],
+    "likely_topology_change_regions": [
+      {
+        "left_start_offset": 0,
+        "right_start_offset": 0,
+        "candidate_type": "topology_payload",
+        "size": 6092
+      },
+      {
+        "left_start_offset": 2,
+        "right_start_offset": 6094,
+        "candidate_type": "compressed_payload",
+        "size": 902
+      },
+      {
+        "left_start_offset": 4,
+        "right_start_offset": 6998,
+        "candidate_type": "topology_payload",
+        "size": 4477
+      }
+    ],
+    "change_pattern_assessment": "Large structural regions and inserted coverage are the strongest candidate for router/topology representation.",
+    "structure_hypothesis": "one_monolithic_encoded_payload",
+    "next_decoder_hypothesis": "Focus on whole-file container transforms or chunk tables before trying finer-grained extraction.",
+    "top_windows": [
+      {
+        "start_offset": 512,
+        "end_offset": 768,
+        "size": 256,
+        "percent_changed": 100.0,
+        "left_entropy": 7.1609,
+        "right_entropy": 7.1516
+      },
+      {
+        "start_offset": 1792,
+        "end_offset": 2048,
+        "size": 256,
+        "percent_changed": 100.0,
+        "left_entropy": 7.2233,
+        "right_entropy": 7.16
+      },
+      {
+        "start_offset": 2560,
+        "end_offset": 2816,
+        "size": 256,
+        "percent_changed": 100.0,
+        "left_entropy": 7.152,
+        "right_entropy": 7.2
+      }
+    ],
+    "pair_samples": [
+      "trial.pkt",
+      "trial-router.pkt"
+    ]
+  }
+}

@@ -1,9 +1,9 @@
 {
   "meta": {
-    "source_file": "trial.pkz",
+    "source_file": "trial.pkt",
     "parser_version": "0.1.0",
     "packet_tracer_version_hint": null,
-    "parsed_at": "2026-04-09T22:47:41.169899Z",
+    "parsed_at": "2026-04-09T23:16:42.341501Z",
     "warnings": []
   },
   "devices": [],

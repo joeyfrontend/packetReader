@@ -1,0 +1,1099 @@
+{
+  "pair_name": "trial-ipchange_vs_trial-router",
+  "generated_at": "2026-04-09T23:36:26.731829Z",
+  "left_file": {
+    "name": "trial-ipchange.pkt",
+    "path": "samples\\trial-ipchange.pkt",
+    "size": 47260
+  },
+  "right_file": {
+    "name": "trial-router.pkt",
+    "path": "samples\\trial-router.pkt",
+    "size": 49375
+  },
+  "oracle_delta": {
+    "added_devices": [
+      "Router0"
+    ],
+    "removed_devices": [],
+    "added_links": [
+      [
+        "Router0",
+        "Switch0"
+      ],
+      [
+        "Router0",
+        "Switch1"
+      ]
+    ],
+    "removed_links": [
+      [
+        "Switch0",
+        "Switch1"
+      ]
+    ],
+    "added_ips": [
+      {
+        "device": "Router0",
+        "ip": "192.168.1.254"
+      },
+      {
+        "device": "Router0",
+        "ip": "192.168.2.254"
+      }
+    ],
+    "removed_ips": [
+      {
+        "device": "PC0",
+        "ip": "192.168.1.1"
+      },
+      {
+        "device": "PC1",
+        "ip": "192.168.1.3"
+      }
+    ]
+  },
+  "comparison_stats": {
+    "exact_common_prefix_bytes": 1,
+    "changed_region_count": 317,
+    "inserted_region_count": 126,
+    "deleted_region_count": 44,
+    "shifted_region_count": 0,
+    "changed_coverage_left_percent": 99.2,
+    "changed_coverage_right_percent": 99.23,
+    "changes_look": "global"
+  },
+  "identical_regions": [
+    {
+      "left_start_offset": 32611,
+      "left_end_offset": 32615,
+      "right_start_offset": 8758,
+      "right_end_offset": 8762,
+      "size": 4,
+      "offset_delta": -23853
+    },
+    {
+      "left_start_offset": 35736,
+      "left_end_offset": 35740,
+      "right_start_offset": 10576,
+      "right_end_offset": 10580,
+      "size": 4,
+      "offset_delta": -25160
+    },
+    {
+      "left_start_offset": 2726,
+      "left_end_offset": 2729,
+      "right_start_offset": 4770,
+      "right_end_offset": 4773,
+      "size": 3,
+      "offset_delta": 2044
+    },
+    {
+      "left_start_offset": 9045,
+      "left_end_offset": 9048,
+      "right_start_offset": 5297,
+      "right_end_offset": 5300,
+      "size": 3,
+      "offset_delta": -3748
+    },
+    {
+      "left_start_offset": 9642,
+      "left_end_offset": 9645,
+      "right_start_offset": 6180,
+      "right_end_offset": 6183,
+      "size": 3,
+      "offset_delta": -3462
+    },
+    {
+      "left_start_offset": 37182,
+      "left_end_offset": 37185,
+      "right_start_offset": 26444,
+      "right_end_offset": 26447,
+      "size": 3,
+      "offset_delta": -10738
+    },
+    {
+      "left_start_offset": 38147,
+      "left_end_offset": 38150,
+      "right_start_offset": 46524,
+      "right_end_offset": 46527,
+      "size": 3,
+      "offset_delta": 8377
+    },
+    {
+      "left_start_offset": 2,
+      "left_end_offset": 4,
+      "right_start_offset": 2819,
+      "right_end_offset": 2821,
+      "size": 2,
+      "offset_delta": 2817
+    }
+  ],
+  "shifted_regions": [],
+  "inserted_regions": [
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 0,
+        "end_offset": 0,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 0,
+        "end_offset": 87,
+        "size": 87,
+        "entropy": 6.0205,
+        "printable_ratio": 0.3908,
+        "nearby_printable_strings": [
+          ";aIr%v"
+        ],
+        "nearby_hex_preview": "f2db5ce57b902bcb9f464291c9293422d3dee67cdf063b6149722576069c8640f6f5bdaaf3064edeb405e555937c84496537db54acfbf19157f2159c812d1c16",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 1,
+        "end_offset": 1,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 88,
+        "end_offset": 96,
+        "size": 8,
+        "entropy": 3.0,
+        "printable_ratio": 0.375,
+        "nearby_printable_strings": [
+          ";aIr%v"
+        ],
+        "nearby_hex_preview": "f2db5ce57b902bcb9f464291c9293422d3dee67cdf063b6149722576069c8640f6f5bdaaf3064edeb405e555937c84496537db54acfbf19157f2159c812d1c16",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 2,
+        "end_offset": 2,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 97,
+        "end_offset": 2819,
+        "size": 2722,
+        "entropy": 7.937,
+        "printable_ratio": 0.3637,
+        "nearby_printable_strings": [
+          ";aIr%v",
+          "J&(!",
+          "+s8U",
+          "d)bT",
+          "_xZ+",
+          "C8=U"
+        ],
+        "nearby_hex_preview": "db5ce57b902bcb9f464291c9293422d3dee67cdf063b6149722576069c8640f6f5bdaaf3064edeb405e555937c84496537db54acfbf19157f2159c812d1c167b",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 4,
+        "end_offset": 4,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2821,
+        "end_offset": 2834,
+        "size": 13,
+        "entropy": 3.7004,
+        "printable_ratio": 0.4615,
+        "nearby_printable_strings": [
+          "xQ>T",
+          "I;>u%",
+          "8\tQ5g",
+          "s/vc"
+        ],
+        "nearby_hex_preview": "0b008074efbed792ffdf24913eccc7355ed824ef9c8fa5b9bdd8da18841946ba410878513e54f786a8c6cab90b839287ae94e5eb4f7d2baa88e90ae4306d9f76",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 5,
+        "end_offset": 5,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2835,
+        "end_offset": 2926,
+        "size": 91,
+        "entropy": 6.2441,
+        "printable_ratio": 0.3736,
+        "nearby_printable_strings": [
+          "xQ>T",
+          "I;>u%",
+          "8\tQ5g",
+          "s/vc"
+        ],
+        "nearby_hex_preview": "c7355ed824ef9c8fa5b9bdd8da18841946ba410878513e54f786a8c6cab90b839287ae94e5eb4f7d2baa88e90ae4306d9f76d3e0cc37ffb71ac4e6a6559acdf2",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 6,
+        "end_offset": 6,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2927,
+        "end_offset": 2941,
+        "size": 14,
+        "entropy": 3.8074,
+        "printable_ratio": 0.5714,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "82b793cd500fef75f60e6055f90d1b6e18fd87d80b0f6f140340efcc5e0cf5bdcb321e38d291c50680480a49eac84b7c1f813b560178268e257138889c2e4eff",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 7,
+        "end_offset": 7,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2942,
+        "end_offset": 2996,
+        "size": 54,
+        "entropy": 5.6438,
+        "printable_ratio": 0.3889,
+        "nearby_printable_strings": [
+          "U;\r Px",
+          "aglJ"
+        ],
+        "nearby_hex_preview": "6e18fd87d80b0f6f140340efcc5e0cf5bdcb321e38d291c50680480a49eac84b7c1f813b560178268e257138889c2e4eff68188ea50d88e2a52095f6bb3da80c",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 8,
+        "end_offset": 8,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2997,
+        "end_offset": 3160,
+        "size": 163,
+        "entropy": 6.8348,
+        "printable_ratio": 0.411,
+        "nearby_printable_strings": [
+          "U;\r Px",
+          "aglJ",
+          "e[Cj"
+        ],
+        "nearby_hex_preview": "e2a52095f6bb3da80ce16699ab00ba2b774fbbcc8fd7cd39afc9788228b769266ec4375be35a0c91de2d5c2293b9b80fe109278e6e433c9cde0fbcf54f20d564",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    }
+  ],
+  "deleted_regions": [
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 300,
+        "end_offset": 429,
+        "size": 129,
+        "entropy": 6.5926,
+        "printable_ratio": 0.3411,
+        "nearby_printable_strings": [
+          "\"\\Xy",
+          "/{X>",
+          "80P<we",
+          "DFUa"
+        ],
+        "nearby_hex_preview": "225c58798757e05ce3d90315537a180c9b4823ce44f8bb510e5718b6000dc00c9ad564e8bbc3945dfeb2bebfcd6045c9f6eb5e990f3b7cb9a4ccb0625eb4e2da",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 4622,
+        "end_offset": 4622,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "LUZW",
+          "/=B-Z",
+          "9I~P"
+        ],
+        "nearby_hex_preview": "4820eb864d7f525acd2cecf3fdf2d1b1081b59ff18289d711ef3306ba43c1464bd89248050d9bc8244c3477f776ddcbb386ef42823deaa45f273086672d9c96f",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 430,
+        "end_offset": 664,
+        "size": 234,
+        "entropy": 7.0971,
+        "printable_ratio": 0.3632,
+        "nearby_printable_strings": [
+          "/{X>",
+          "80P<we",
+          "DFUa",
+          "2\t.F",
+          "_e`~",
+          "EF()l"
+        ],
+        "nearby_hex_preview": "b1830f4085341004251bcf30ab9b4a4a86bea5f41a9c4b2bdee5c375bb87289cc29c89b6b512ea821d73e22a9983da8bc1b09a1581ea4612c721c0e86c6f897a",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 4623,
+        "end_offset": 4623,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "LUZW",
+          "/=B-Z",
+          "9I~P"
+        ],
+        "nearby_hex_preview": "20eb864d7f525acd2cecf3fdf2d1b1081b59ff18289d711ef3306ba43c1464bd89248050d9bc8244c3477f776ddcbb386ef42823deaa45f273086672d9c96f6b",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 676,
+        "end_offset": 693,
+        "size": 17,
+        "entropy": 3.9698,
+        "printable_ratio": 0.4706,
+        "nearby_printable_strings": [
+          "_e`~",
+          "EF()l",
+          "m8v)",
+          "F\t\tc",
+          "CeV[DS"
+        ],
+        "nearby_hex_preview": "46d7dcfd3ad8e81689d715b4eb5f65607e1073b1f92d7f9d763f93f1900edf1011d2435b529168a484971e25b6d40984af885aa6ff97dea6efd0d98cafb10237",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 4638,
+        "end_offset": 4638,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "LUZW",
+          "/=B-Z",
+          "9I~P"
+        ],
+        "nearby_hex_preview": "081b59ff18289d711ef3306ba43c1464bd89248050d9bc8244c3477f776ddcbb386ef42823deaa45f273086672d9c96f6bd45dc5c4acedd64d0e78eedae08760",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 807,
+        "end_offset": 867,
+        "size": 60,
+        "entropy": 5.8402,
+        "printable_ratio": 0.4167,
+        "nearby_printable_strings": [
+          "CeV[DS"
+        ],
+        "nearby_hex_preview": "090963a4987b942c8bdd4365565b4453bb93178cf072c36b1e76ecc41c77f1458bc01adeafde6692e07bf2736a46fbd524dc74837fa177654ebc8739b937107f",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 4645,
+        "end_offset": 4645,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "LUZW",
+          "/=B-Z",
+          "9I~P"
+        ],
+        "nearby_hex_preview": "711ef3306ba43c1464bd89248050d9bc8244c3477f776ddcbb386ef42823deaa45f273086672d9c96f6bd45dc5c4acedd64d0e78eedae08760cf45a26bebf1fe",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 868,
+        "end_offset": 1069,
+        "size": 201,
+        "entropy": 6.96,
+        "printable_ratio": 0.3532,
+        "nearby_printable_strings": [
+          "K'QK",
+          "l$`q",
+          "(I-TN"
+        ],
+        "nearby_hex_preview": "37107faef3205d679f279618e8415b24a380d50aefc3ee5ef3a5c570aa8ef020bc2a0b0db2ac6233d032e16c08783c61d82a89e5da4dd71aa2d5fa35b35c7f56",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 4646,
+        "end_offset": 4646,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "LUZW",
+          "/=B-Z",
+          "9I~P"
+        ],
+        "nearby_hex_preview": "1ef3306ba43c1464bd89248050d9bc8244c3477f776ddcbb386ef42823deaa45f273086672d9c96f6bd45dc5c4acedd64d0e78eedae08760cf45a26bebf1fe72",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 1070,
+        "end_offset": 1366,
+        "size": 296,
+        "entropy": 7.3062,
+        "printable_ratio": 0.4054,
+        "nearby_printable_strings": [
+          "l$`q",
+          "(I-TN",
+          "%qiu",
+          "o/b(f",
+          "5Y/k"
+        ],
+        "nearby_hex_preview": "4a84ed37f83c837f812e7aed8afbe86c2460718e7299b901994f0b93241128492d544e016574939e11b19e48d479fcd952267a95330f5eabdea3214c69bb5a14",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 4647,
+        "end_offset": 4647,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "LUZW",
+          "/=B-Z",
+          "9I~P"
+        ],
+        "nearby_hex_preview": "f3306ba43c1464bd89248050d9bc8244c3477f776ddcbb386ef42823deaa45f273086672d9c96f6bd45dc5c4acedd64d0e78eedae08760cf45a26bebf1fe72ab",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 1410,
+        "end_offset": 1479,
+        "size": 69,
+        "entropy": 5.7787,
+        "printable_ratio": 0.3913,
+        "nearby_printable_strings": [
+          "5Y/k"
+        ],
+        "nearby_hex_preview": "8233c52a8b0f0a59da583303c7f6c09b35592f6b8198a3ba0231ffed932d64889a537a8a3b56220c3e7c0ccd023c9a897c5b053315f06d477bf05f4f4bb68560",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 4668,
+        "end_offset": 4668,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "LUZW",
+          "/=B-Z",
+          "9I~P"
+        ],
+        "nearby_hex_preview": "dcbb386ef42823deaa45f273086672d9c96f6bd45dc5c4acedd64d0e78eedae08760cf45a26bebf1fe72ab366c8dbdef868e49efea4c555a579592adc371478e",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "delete",
+      "left": {
+        "start_offset": 1480,
+        "end_offset": 1865,
+        "size": 385,
+        "entropy": 7.4933,
+        "printable_ratio": 0.3792,
+        "nearby_printable_strings": [
+          "NX>8t",
+          "VlmF",
+          "HFVsfQ3",
+          "2vP%s^!",
+          "T/in",
+          "h\tnbn"
+        ],
+        "nearby_hex_preview": "d06203d76402308f57d3d56b57c1149a262dc80f6094d62776178dc2720bde1733c32411fee4ba986c78b7a13c5c55d668fb5eb45bb20989e26c2df84a5a84cc",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 4669,
+        "end_offset": 4669,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "LUZW",
+          "/=B-Z",
+          "9I~P"
+        ],
+        "nearby_hex_preview": "bb386ef42823deaa45f273086672d9c96f6bd45dc5c4acedd64d0e78eedae08760cf45a26bebf1fe72ab366c8dbdef868e49efea4c555a579592adc371478e14",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    }
+  ],
+  "changed_regions": [
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 0,
+        "end_offset": 0,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 0,
+        "end_offset": 87,
+        "size": 87,
+        "entropy": 6.0205,
+        "printable_ratio": 0.3908,
+        "nearby_printable_strings": [
+          ";aIr%v"
+        ],
+        "nearby_hex_preview": "f2db5ce57b902bcb9f464291c9293422d3dee67cdf063b6149722576069c8640f6f5bdaaf3064edeb405e555937c84496537db54acfbf19157f2159c812d1c16",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 1,
+        "end_offset": 1,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 88,
+        "end_offset": 96,
+        "size": 8,
+        "entropy": 3.0,
+        "printable_ratio": 0.375,
+        "nearby_printable_strings": [
+          ";aIr%v"
+        ],
+        "nearby_hex_preview": "f2db5ce57b902bcb9f464291c9293422d3dee67cdf063b6149722576069c8640f6f5bdaaf3064edeb405e555937c84496537db54acfbf19157f2159c812d1c16",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 2,
+        "end_offset": 2,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 97,
+        "end_offset": 2819,
+        "size": 2722,
+        "entropy": 7.937,
+        "printable_ratio": 0.3637,
+        "nearby_printable_strings": [
+          ";aIr%v",
+          "J&(!",
+          "+s8U",
+          "d)bT",
+          "_xZ+",
+          "C8=U"
+        ],
+        "nearby_hex_preview": "db5ce57b902bcb9f464291c9293422d3dee67cdf063b6149722576069c8640f6f5bdaaf3064edeb405e555937c84496537db54acfbf19157f2159c812d1c167b",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 4,
+        "end_offset": 4,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2821,
+        "end_offset": 2834,
+        "size": 13,
+        "entropy": 3.7004,
+        "printable_ratio": 0.4615,
+        "nearby_printable_strings": [
+          "xQ>T",
+          "I;>u%",
+          "8\tQ5g",
+          "s/vc"
+        ],
+        "nearby_hex_preview": "0b008074efbed792ffdf24913eccc7355ed824ef9c8fa5b9bdd8da18841946ba410878513e54f786a8c6cab90b839287ae94e5eb4f7d2baa88e90ae4306d9f76",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 5,
+        "end_offset": 5,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2835,
+        "end_offset": 2926,
+        "size": 91,
+        "entropy": 6.2441,
+        "printable_ratio": 0.3736,
+        "nearby_printable_strings": [
+          "xQ>T",
+          "I;>u%",
+          "8\tQ5g",
+          "s/vc"
+        ],
+        "nearby_hex_preview": "c7355ed824ef9c8fa5b9bdd8da18841946ba410878513e54f786a8c6cab90b839287ae94e5eb4f7d2baa88e90ae4306d9f76d3e0cc37ffb71ac4e6a6559acdf2",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 6,
+        "end_offset": 6,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2927,
+        "end_offset": 2941,
+        "size": 14,
+        "entropy": 3.8074,
+        "printable_ratio": 0.5714,
+        "nearby_printable_strings": [],
+        "nearby_hex_preview": "82b793cd500fef75f60e6055f90d1b6e18fd87d80b0f6f140340efcc5e0cf5bdcb321e38d291c50680480a49eac84b7c1f813b560178268e257138889c2e4eff",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 7,
+        "end_offset": 7,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2942,
+        "end_offset": 2996,
+        "size": 54,
+        "entropy": 5.6438,
+        "printable_ratio": 0.3889,
+        "nearby_printable_strings": [
+          "U;\r Px",
+          "aglJ"
+        ],
+        "nearby_hex_preview": "6e18fd87d80b0f6f140340efcc5e0cf5bdcb321e38d291c50680480a49eac84b7c1f813b560178268e257138889c2e4eff68188ea50d88e2a52095f6bb3da80c",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "metadata"
+    },
+    {
+      "change_type": "insert",
+      "left": {
+        "start_offset": 8,
+        "end_offset": 8,
+        "size": 0,
+        "entropy": 0.0,
+        "printable_ratio": 0.0,
+        "nearby_printable_strings": [
+          "6m:;"
+        ],
+        "nearby_hex_preview": "6f27e9e2cdc9deee3cb8b8f3b07befba6d96366d3a3b81fcce68a1d562858570cf95236b14b47ee918e9b054a36d9c8205a5d5d5d076346902a2ae4284c8db52",
+        "signatures": []
+      },
+      "right": {
+        "start_offset": 2997,
+        "end_offset": 3160,
+        "size": 163,
+        "entropy": 6.8348,
+        "printable_ratio": 0.411,
+        "nearby_printable_strings": [
+          "U;\r Px",
+          "aglJ",
+          "e[Cj"
+        ],
+        "nearby_hex_preview": "e2a52095f6bb3da80ce16699ab00ba2b774fbbcc8fd7cd39afc9788228b769266ec4375be35a0c91de2d5c2293b9b80fe109278e6e433c9cde0fbcf54f20d564",
+        "signatures": []
+      },
+      "percent_changed": 100.0,
+      "candidate_type": "unknown"
+    }
+  ],
+  "high_change_windows": [
+    {
+      "start_offset": 768,
+      "end_offset": 1024,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1307,
+      "right_entropy": 7.2252
+    },
+    {
+      "start_offset": 1024,
+      "end_offset": 1280,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.157,
+      "right_entropy": 7.1735
+    },
+    {
+      "start_offset": 2816,
+      "end_offset": 3072,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1764,
+      "right_entropy": 7.1281
+    },
+    {
+      "start_offset": 4096,
+      "end_offset": 4352,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1325,
+      "right_entropy": 7.2088
+    },
+    {
+      "start_offset": 4352,
+      "end_offset": 4608,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.2047,
+      "right_entropy": 7.2265
+    },
+    {
+      "start_offset": 4864,
+      "end_offset": 5120,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1769,
+      "right_entropy": 7.2096
+    },
+    {
+      "start_offset": 5376,
+      "end_offset": 5632,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.1326,
+      "right_entropy": 7.176
+    },
+    {
+      "start_offset": 5888,
+      "end_offset": 6144,
+      "size": 256,
+      "percent_changed": 100.0,
+      "left_entropy": 7.13,
+      "right_entropy": 7.1842
+    }
+  ],
+  "investigator_notes": {
+    "pair_focus": "router_and_ip_change",
+    "semantic_oracle_delta": {
+      "added_devices": [
+        "Router0"
+      ],
+      "removed_devices": [],
+      "added_links": [
+        [
+          "Router0",
+          "Switch0"
+        ],
+        [
+          "Router0",
+          "Switch1"
+        ]
+      ],
+      "removed_links": [
+        [
+          "Switch0",
+          "Switch1"
+        ]
+      ],
+      "added_ips": [
+        {
+          "device": "Router0",
+          "ip": "192.168.1.254"
+        },
+        {
+          "device": "Router0",
+          "ip": "192.168.2.254"
+        }
+      ],
+      "removed_ips": [
+        {
+          "device": "PC0",
+          "ip": "192.168.1.1"
+        },
+        {
+          "device": "PC1",
+          "ip": "192.168.1.3"
+        }
+      ]
+    },
+    "likely_ip_change_regions": [
+      {
+        "left_start_offset": 0,
+        "right_start_offset": 0,
+        "candidate_type": "metadata",
+        "left_strings": [
+          "6m:;"
+        ],
+        "right_strings": [
+          ";aIr%v"
+        ]
+      },
+      {
+        "left_start_offset": 1,
+        "right_start_offset": 88,
+        "candidate_type": "metadata",
+        "left_strings": [
+          "6m:;"
+        ],
+        "right_strings": [
+          ";aIr%v"
+        ]
+      },
+      {
+        "left_start_offset": 4,
+        "right_start_offset": 2821,
+        "candidate_type": "metadata",
+        "left_strings": [
+          "6m:;"
+        ],
+        "right_strings": [
+          "xQ>T",
+          "I;>u%",
+          "8\tQ5g"
+        ]
+      }
+    ],
+    "likely_topology_change_regions": [
+      {
+        "left_start_offset": 2,
+        "right_start_offset": 97,
+        "candidate_type": "unknown",
+        "size": 2722
+      },
+      {
+        "left_start_offset": 2954,
+        "right_start_offset": 5191,
+        "candidate_type": "unknown",
+        "size": 643
+      },
+      {
+        "left_start_offset": 3686,
+        "right_start_offset": 5291,
+        "candidate_type": "unknown",
+        "size": 677
+      }
+    ],
+    "change_pattern_assessment": "The pair mixes topology and addressing changes; inspect both localized and structural regions.",
+    "structure_hypothesis": "one_monolithic_encoded_payload",
+    "next_decoder_hypothesis": "Focus on whole-file container transforms or chunk tables before trying finer-grained extraction.",
+    "top_windows": [
+      {
+        "start_offset": 768,
+        "end_offset": 1024,
+        "size": 256,
+        "percent_changed": 100.0,
+        "left_entropy": 7.1307,
+        "right_entropy": 7.2252
+      },
+      {
+        "start_offset": 1024,
+        "end_offset": 1280,
+        "size": 256,
+        "percent_changed": 100.0,
+        "left_entropy": 7.157,
+        "right_entropy": 7.1735
+      },
+      {
+        "start_offset": 2816,
+        "end_offset": 3072,
+        "size": 256,
+        "percent_changed": 100.0,
+        "left_entropy": 7.1764,
+        "right_entropy": 7.1281
+      }
+    ],
+    "pair_samples": [
+      "trial-ipchange.pkt",
+      "trial-router.pkt"
+    ]
+  }
+}

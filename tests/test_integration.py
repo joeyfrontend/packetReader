@@ -6,7 +6,7 @@ from pathlib import Path
 
 from app.cli import main
 from app.parser import run_pipeline
-from tests.helpers import LEGACY_PACKET_TRACER_XML, encode_pkt_bytes
+from tests.helpers import LEGACY_PACKET_TRACER_XML, build_pkz_bytes, encode_pkt_bytes
 
 
 class IntegrationTests(unittest.TestCase):
@@ -56,6 +56,26 @@ class IntegrationTests(unittest.TestCase):
         self.assertTrue((output_dir / "normalized_topology.json").exists())
         self.assertTrue((output_dir / "extraction_report.json").exists())
         self.assertTrue((output_dir / "debug" / "decoded.xml").exists())
+        shutil.rmtree(output_dir, ignore_errors=True)
+
+    def test_pipeline_can_load_pkz_archive(self) -> None:
+        output_dir = Path("output") / "test_pkz_run"
+        shutil.rmtree(output_dir, ignore_errors=True)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        sample = output_dir / "wrapped.pkz"
+        sample.write_bytes(
+            build_pkz_bytes(
+                "wrapped.pkt",
+                encode_pkt_bytes(LEGACY_PACKET_TRACER_XML),
+            )
+        )
+
+        artifacts = run_pipeline(sample, output_dir=output_dir, debug=True)
+
+        self.assertEqual(artifacts.exit_code, 0)
+        self.assertEqual(artifacts.extraction_report["decode_pipeline"]["path_used"], "legacy_xor_zlib")
+        self.assertEqual(artifacts.raw_dump["input_container"]["container"], "pkz")
+        self.assertEqual(artifacts.raw_dump["input_container"]["payload_name"], "wrapped.pkt")
         shutil.rmtree(output_dir, ignore_errors=True)
 
 

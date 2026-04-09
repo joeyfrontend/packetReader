@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import zipfile
 from pathlib import Path
 from typing import Any
 
@@ -14,11 +15,13 @@ from .heuristics import (
     extract_xml_entities,
 )
 from .inspector import inspect_bytes
+from .input_loader import load_input_bytes
 from .models import DecodeResult, DecodedPktResult, ExtractionResult, PipelineArtifacts, UnmappedBlock, XmlParseResult
 from .normalizer import normalize_topology
 from .pkt_decoder import decode_pkt_bytes
 from .report import ReportBuilder
 from .utils import current_timestamp
+from .validator import build_oracle_validation
 from .xml_parser import parse_xml_content
 
 
@@ -276,7 +279,12 @@ def run_pipeline(
     normalized_topology = _build_empty_normalized(input_path.name)
 
     try:
-        data = input_path.read_bytes()
+        debug_dir = output_dir / "debug" if debug and output_dir else None
+        input_payload = load_input_bytes(
+            input_path,
+            report=report,
+            debug_dir=debug_dir,
+        )
     except FileNotFoundError:
         report.fatal("Input file does not exist", path=str(input_path))
         report_payload = report.to_payload(
@@ -315,13 +323,32 @@ def run_pipeline(
             recovered_text="",
             exit_code=1,
         )
+    except (ValueError, zipfile.BadZipFile) as exc:
+        report.fatal("Failed to load input payload", path=str(input_path), error=str(exc))
+        report_payload = report.to_payload(
+            source_file=input_path.name,
+            inspection=None,
+            decode_result=None,
+            extraction=None,
+            normalized_topology=normalized_topology,
+            pkt_decode=None,
+            xml_parse=None,
+            parser_path="read_error",
+        )
+        return PipelineArtifacts(
+            raw_dump=raw_dump,
+            normalized_topology=normalized_topology,
+            extraction_report=report_payload,
+            recovered_text="",
+            exit_code=1,
+        )
 
-    inspection = inspect_bytes(data, input_path.name, report)
-    debug_dir = output_dir / "debug" if debug and output_dir else None
+    data = input_payload.data
+    inspection = inspect_bytes(data, input_payload.payload_name, report)
 
     pkt_decode = decode_pkt_bytes(
         data,
-        input_path.name,
+        input_payload.payload_name,
         report=report,
         debug_dir=debug_dir,
     )
@@ -336,7 +363,7 @@ def run_pipeline(
         if xml_parse.success:
             report.info(
                 "Decoded XML parsed successfully",
-                source_file=input_path.name,
+                source_file=input_payload.source_file,
                 strategy_name=pkt_decode.strategy_name,
                 root_tag=xml_parse.root_tag,
                 device_count=len(xml_parse.devices),
@@ -348,7 +375,7 @@ def run_pipeline(
             for warning in xml_parse.warnings:
                 report.warning(warning, source_file=input_path.name)
             for error in xml_parse.errors:
-                report.error("Decoded XML parse failed", source_file=input_path.name, error=error)
+                report.error("Decoded XML parse failed", source_file=input_payload.source_file, error=error)
             decode_result = decode_payloads(
                 data,
                 inspection,
@@ -356,7 +383,7 @@ def run_pipeline(
                 debug_dir=debug_dir,
             )
             extraction = _extract_entities_from_heuristics(
-                input_path.name,
+                input_payload.payload_name,
                 decode_result,
                 report,
                 strings_only=strings_only,
@@ -370,7 +397,7 @@ def run_pipeline(
             debug_dir=debug_dir,
         )
         extraction = _extract_entities_from_heuristics(
-            input_path.name,
+            input_payload.payload_name,
             decode_result,
             report,
             strings_only=strings_only,
@@ -381,12 +408,12 @@ def run_pipeline(
 
     if strings_only:
         report.info("Strings-only mode enabled; skipping normalization extraction")
-        normalized_topology = _build_empty_normalized(input_path.name)
+        normalized_topology = _build_empty_normalized(input_payload.source_file)
     else:
-        normalized_topology = normalize_topology(input_path.name, extraction)
+        normalized_topology = normalize_topology(input_payload.source_file, extraction)
 
     raw_dump = _build_raw_dump(
-        input_path.name,
+        input_payload.source_file,
         inspection,
         extraction,
         report,
@@ -395,8 +422,13 @@ def run_pipeline(
         xml_parse=xml_parse,
         decode_result=decode_result,
     )
+    raw_dump["input_container"] = {
+        "container": input_payload.container,
+        "payload_name": input_payload.payload_name,
+        "metadata": input_payload.metadata,
+    }
     report_payload = report.to_payload(
-        source_file=input_path.name,
+        source_file=input_payload.source_file,
         inspection=inspection,
         decode_result=decode_result,
         extraction=extraction,
@@ -404,6 +436,16 @@ def run_pipeline(
         pkt_decode=pkt_decode,
         xml_parse=xml_parse,
         parser_path=parser_path,
+    )
+    report_payload.update(
+        build_oracle_validation(
+            source_file=input_payload.source_file,
+            normalized_topology=normalized_topology,
+            extraction=extraction,
+            pkt_decode=pkt_decode,
+            xml_parse=xml_parse,
+            inspection=inspection,
+        )
     )
 
     recovered_text = (

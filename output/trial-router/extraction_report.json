@@ -1,0 +1,709 @@
+{
+  "meta": {
+    "source_file": "trial-router.pkt",
+    "parser_version": "0.1.0",
+    "generated_at": "2026-04-09T23:18:12.645540Z"
+  },
+  "status": {
+    "success": true,
+    "partial": true,
+    "fatal_error": null
+  },
+  "decode_pipeline": {
+    "path_used": "heuristic_fallback",
+    "deterministic_attempted": true,
+    "deterministic_success": false,
+    "successful_strategy": null,
+    "xml_parse_success": false,
+    "fallback_used": true,
+    "declared_uncompressed_size": null,
+    "decoded_xml_size": null,
+    "attempts": [
+      {
+        "strategy_name": "legacy_xor_zlib",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "Zlib decompression failed: Error -3 while decompressing data: incorrect header check"
+        ]
+      },
+      {
+        "strategy_name": "direct_xml",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "File does not begin with XML content."
+        ]
+      },
+      {
+        "strategy_name": "gzip_carve",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "No gzip-compressed XML payload found by carving strategy."
+        ]
+      },
+      {
+        "strategy_name": "zlib_carve",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "No zlib-compressed XML payload found by carving strategy."
+        ]
+      },
+      {
+        "strategy_name": "single_byte_xor_probe",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "No XML-bearing single-byte XOR transform was detected."
+        ]
+      }
+    ]
+  },
+  "counts": {
+    "signatures_detected": 2,
+    "decoded_chunks": 8,
+    "text_fragments": 8,
+    "device_candidates": 0,
+    "link_candidates": 0,
+    "notes": 0,
+    "unmapped_blocks": 0,
+    "normalized_devices": 0,
+    "normalized_links": 0
+  },
+  "fields_extracted": {
+    "device_names": 0,
+    "device_types": 0,
+    "device_positions": 0,
+    "interface_names": 0,
+    "interface_ips": 0,
+    "config_texts": 0,
+    "link_endpoints": 0
+  },
+  "missing_fields": {
+    "devices_without_name": 0,
+    "devices_without_type": 0,
+    "devices_without_position": 0,
+    "interfaces_without_ip": 0,
+    "links_with_missing_endpoints": 0
+  },
+  "suspicious_sections": [
+    {
+      "kind": "zlib",
+      "count": 2,
+      "reason": "Detected signature requires future reverse-engineering support"
+    }
+  ],
+  "events": {
+    "info": [
+      {
+        "message": "Inspecting input bytes",
+        "context": {
+          "source_file": "trial-router.pkt",
+          "size_bytes": 49375
+        },
+        "timestamp": "2026-04-09T23:18:09.602396Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial-router.pkt",
+          "strategy_name": "legacy_xor_zlib"
+        },
+        "timestamp": "2026-04-09T23:18:09.652871Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial-router.pkt",
+          "strategy_name": "direct_xml"
+        },
+        "timestamp": "2026-04-09T23:18:09.675189Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial-router.pkt",
+          "strategy_name": "gzip_carve"
+        },
+        "timestamp": "2026-04-09T23:18:09.675610Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial-router.pkt",
+          "strategy_name": "zlib_carve"
+        },
+        "timestamp": "2026-04-09T23:18:09.676067Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial-router.pkt",
+          "strategy_name": "single_byte_xor_probe"
+        },
+        "timestamp": "2026-04-09T23:18:09.676702Z"
+      },
+      {
+        "message": "No in-band Packet Tracer version hint extracted",
+        "context": {
+          "source_file": "trial-router.pkt"
+        },
+        "timestamp": "2026-04-09T23:18:12.645214Z"
+      }
+    ],
+    "warnings": [
+      {
+        "message": "High entropy file content detected",
+        "context": {
+          "entropy": 7.9959
+        },
+        "timestamp": "2026-04-09T23:18:09.652571Z"
+      }
+    ],
+    "recoverable_errors": [
+      {
+        "message": "All deterministic decoder strategies failed",
+        "context": {
+          "source_file": "trial-router.pkt",
+          "attempts": [
+            "legacy_xor_zlib",
+            "direct_xml",
+            "gzip_carve",
+            "zlib_carve",
+            "single_byte_xor_probe"
+          ]
+        },
+        "timestamp": "2026-04-09T23:18:12.618295Z"
+      },
+      {
+        "message": "Failed to decompress candidate payload",
+        "context": {
+          "kind": "zlib",
+          "offset": 6247,
+          "error": "Error -3 while decompressing data: invalid stored block lengths"
+        },
+        "timestamp": "2026-04-09T23:18:12.644302Z"
+      },
+      {
+        "message": "Failed to decompress candidate payload",
+        "context": {
+          "kind": "zlib",
+          "offset": 20219,
+          "error": "Error -3 while decompressing data: invalid distance code"
+        },
+        "timestamp": "2026-04-09T23:18:12.644536Z"
+      }
+    ],
+    "fatal_errors": [],
+    "trace": []
+  },
+  "oracle_validation": {
+    "oracle_available": true,
+    "source_file": "trial-router.pkt",
+    "oracle_source": "internal_manual_oracle",
+    "packet_tracer_version": "9.0.0",
+    "saved_on_os": "Windows 10 Pro 22H2",
+    "baseline_source_file": "trial.pkt",
+    "vlan_context": null,
+    "notes": [
+      "Single router between two switched LANs.",
+      "Do not infer or generate RIP; one router routes between its directly connected interfaces.",
+      "PC default gateways are 192.168.1.254 and 192.168.2.254 respectively.",
+      "Oracle data is for validation only and is never injected into extracted topology output.",
+      "Interface checks only cover explicitly known oracle interfaces and never assume unlabeled Packet Tracer interface numbers."
+    ],
+    "inspection_context": {
+      "entropy": 7.9959,
+      "printable_ratio": 0.3788,
+      "candidate_offsets": {
+        "zlib": [
+          6247,
+          20219
+        ]
+      }
+    }
+  },
+  "expected_vs_found": {
+    "devices": {
+      "expected_count": 5,
+      "found_count": 0,
+      "expected_names": [
+        "Switch0",
+        "Switch1",
+        "PC0",
+        "PC1",
+        "Router0"
+      ],
+      "found_names": []
+    },
+    "interfaces": {
+      "expected_count": 2,
+      "found_count": 0,
+      "expected": [
+        {
+          "device": "Router0",
+          "name": "GigabitEthernet0/0",
+          "ip": "192.168.1.254",
+          "mask": "255.255.255.0",
+          "subnet": "192.168.1.0/24"
+        },
+        {
+          "device": "Router0",
+          "name": "GigabitEthernet0/1",
+          "ip": "192.168.2.254",
+          "mask": "255.255.255.0",
+          "subnet": "192.168.2.0/24"
+        }
+      ],
+      "found": []
+    },
+    "links": {
+      "expected_count": 4,
+      "found_count": 0,
+      "expected": [
+        [
+          "PC0",
+          "Switch0"
+        ],
+        [
+          "Router0",
+          "Switch0"
+        ],
+        [
+          "Router0",
+          "Switch1"
+        ],
+        [
+          "PC1",
+          "Switch1"
+        ]
+      ],
+      "found": []
+    },
+    "ips": {
+      "expected_count": 2,
+      "found_count": 0,
+      "expected": [
+        {
+          "device": "Router0",
+          "ip": "192.168.1.254"
+        },
+        {
+          "device": "Router0",
+          "ip": "192.168.2.254"
+        }
+      ],
+      "found": []
+    },
+    "subnets": {
+      "expected_count": 4,
+      "found_count": 0,
+      "expected": [
+        {
+          "device": "PC0",
+          "subnet": "192.168.1.0/24"
+        },
+        {
+          "device": "PC1",
+          "subnet": "192.168.2.0/24"
+        },
+        {
+          "device": "Router0",
+          "subnet": "192.168.1.0/24"
+        },
+        {
+          "device": "Router0",
+          "subnet": "192.168.2.0/24"
+        }
+      ],
+      "found": []
+    },
+    "device_types_models": [
+      {
+        "device": "Switch0",
+        "expected_type": "switch",
+        "found_type": null,
+        "expected_model": "Cisco 2960-24TT",
+        "found_model": null
+      },
+      {
+        "device": "Switch1",
+        "expected_type": "switch",
+        "found_type": null,
+        "expected_model": "Cisco 2960-24TT",
+        "found_model": null
+      },
+      {
+        "device": "PC0",
+        "expected_type": "pc",
+        "found_type": null,
+        "expected_model": "PC-PT",
+        "found_model": null
+      },
+      {
+        "device": "PC1",
+        "expected_type": "pc",
+        "found_type": null,
+        "expected_model": "PC-PT",
+        "found_model": null
+      },
+      {
+        "device": "Router0",
+        "expected_type": "router",
+        "found_type": null,
+        "expected_model": "Cisco 2901",
+        "found_model": null
+      }
+    ]
+  },
+  "missing_expected_entities": {
+    "devices": [
+      {
+        "name": "Switch0",
+        "expected_type": "switch",
+        "expected_model": "Cisco 2960-24TT",
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "name": "Switch1",
+        "expected_type": "switch",
+        "expected_model": "Cisco 2960-24TT",
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "name": "PC0",
+        "expected_type": "pc",
+        "expected_model": "PC-PT",
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "name": "PC1",
+        "expected_type": "pc",
+        "expected_model": "PC-PT",
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "name": "Router0",
+        "expected_type": "router",
+        "expected_model": "Cisco 2901",
+        "likely_failure_stage": "decode stage"
+      }
+    ],
+    "interfaces": [
+      {
+        "device": "Router0",
+        "name": "GigabitEthernet0/0",
+        "expected_ip": "192.168.1.254",
+        "expected_subnet": "192.168.1.0/24",
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "device": "Router0",
+        "name": "GigabitEthernet0/1",
+        "expected_ip": "192.168.2.254",
+        "expected_subnet": "192.168.2.0/24",
+        "likely_failure_stage": "decode stage"
+      }
+    ],
+    "links": [
+      {
+        "endpoints": [
+          "PC0",
+          "Switch0"
+        ],
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "endpoints": [
+          "Router0",
+          "Switch0"
+        ],
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "endpoints": [
+          "Router0",
+          "Switch1"
+        ],
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "endpoints": [
+          "PC1",
+          "Switch1"
+        ],
+        "likely_failure_stage": "decode stage"
+      }
+    ]
+  },
+  "unexpected_extracted_entities": {
+    "devices": [],
+    "interfaces": [],
+    "links": [],
+    "ips": []
+  },
+  "missing_expected_fields": [
+    {
+      "entity": "Switch0",
+      "field": "type",
+      "expected": "switch",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Switch0",
+      "field": "model",
+      "expected": "Cisco 2960-24TT",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Switch1",
+      "field": "type",
+      "expected": "switch",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Switch1",
+      "field": "model",
+      "expected": "Cisco 2960-24TT",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC0",
+      "field": "type",
+      "expected": "pc",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC0",
+      "field": "model",
+      "expected": "PC-PT",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC0",
+      "field": "subnet",
+      "expected": "192.168.1.0/24",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC1",
+      "field": "type",
+      "expected": "pc",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC1",
+      "field": "model",
+      "expected": "PC-PT",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC1",
+      "field": "subnet",
+      "expected": "192.168.2.0/24",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0",
+      "field": "type",
+      "expected": "router",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0",
+      "field": "model",
+      "expected": "Cisco 2901",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0",
+      "field": "subnet",
+      "expected": "192.168.1.0/24",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0",
+      "field": "subnet",
+      "expected": "192.168.2.0/24",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0:GigabitEthernet0/0",
+      "field": "interface",
+      "expected": "GigabitEthernet0/0",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0:GigabitEthernet0/0",
+      "field": "ip",
+      "expected": "192.168.1.254",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0:GigabitEthernet0/0",
+      "field": "subnet",
+      "expected": "192.168.1.0/24",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0:GigabitEthernet0/1",
+      "field": "interface",
+      "expected": "GigabitEthernet0/1",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0:GigabitEthernet0/1",
+      "field": "ip",
+      "expected": "192.168.2.254",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Router0:GigabitEthernet0/1",
+      "field": "subnet",
+      "expected": "192.168.2.0/24",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    }
+  ],
+  "oracle_state_delta": {
+    "baseline_source_file": "trial.pkt",
+    "expected_changes": {
+      "added_devices": [
+        "Router0"
+      ],
+      "removed_devices": [],
+      "added_links": [
+        [
+          "Router0",
+          "Switch0"
+        ],
+        [
+          "Router0",
+          "Switch1"
+        ]
+      ],
+      "removed_links": [
+        [
+          "Switch0",
+          "Switch1"
+        ]
+      ],
+      "added_interfaces": [
+        {
+          "device": "Router0",
+          "name": "gi0/0"
+        },
+        {
+          "device": "Router0",
+          "name": "gi0/1"
+        }
+      ],
+      "removed_interfaces": [],
+      "added_ips": [
+        {
+          "device": "Router0",
+          "ip": "192.168.1.254"
+        },
+        {
+          "device": "Router0",
+          "ip": "192.168.2.254"
+        }
+      ],
+      "removed_ips": [],
+      "added_subnets": [
+        {
+          "device": "PC1",
+          "subnet": "192.168.2.0/24"
+        },
+        {
+          "device": "Router0",
+          "subnet": "192.168.1.0/24"
+        },
+        {
+          "device": "Router0",
+          "subnet": "192.168.2.0/24"
+        }
+      ],
+      "removed_subnets": [
+        {
+          "device": "PC1",
+          "subnet": "192.168.1.0/24"
+        }
+      ]
+    },
+    "observed_extracted_delta_vs_baseline_oracle": {
+      "added_devices": [],
+      "removed_devices": [
+        "PC0",
+        "PC1",
+        "Switch0",
+        "Switch1"
+      ],
+      "added_links": [],
+      "removed_links": [
+        [
+          "PC0",
+          "Switch0"
+        ],
+        [
+          "PC1",
+          "Switch1"
+        ],
+        [
+          "Switch0",
+          "Switch1"
+        ]
+      ],
+      "added_interfaces": [],
+      "removed_interfaces": [],
+      "added_ips": [],
+      "removed_ips": [
+        {
+          "device": "PC0",
+          "ip": "192.168.1.1"
+        },
+        {
+          "device": "PC1",
+          "ip": "192.168.1.2"
+        }
+      ],
+      "added_subnets": [],
+      "removed_subnets": [
+        {
+          "device": "PC0",
+          "subnet": "192.168.1.0/24"
+        },
+        {
+          "device": "PC1",
+          "subnet": "192.168.1.0/24"
+        }
+      ]
+    }
+  }
+}

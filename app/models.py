@@ -99,6 +99,17 @@ class DecodedPktResult:
 
 
 @dataclass(slots=True)
+class InputLoadResult:
+    source_file: str
+    display_source: str
+    payload_name: str
+    raw_size_bytes: int
+    data: bytes
+    container: str = "file"
+    metadata: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(slots=True)
 class InterfaceCandidate:
     name: str | None = None
     ip: str | None = None

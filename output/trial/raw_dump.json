@@ -1,58 +1,74 @@
 {
   "meta": {
-    "source_file": "trial.pkz",
+    "source_file": "trial.pkt",
     "parser_version": "0.1.0",
-    "parsed_at": "2026-04-09T22:47:41.169922Z",
+    "parsed_at": "2026-04-09T23:16:42.341539Z",
     "parser_path": "heuristic_fallback"
   },
   "inspection": {
     "source_file": "trial.pkt",
     "size_bytes": 47410,
-    "sha256": "da7426499807d59f03000b3562b437d612af6397aa32f9fbbf3d4ce82c667779",
-    "entropy": 7.9965,
-    "printable_ratio": 0.3834,
-    "magic_hex": "d2965da12f14baffb3bd2d47a16208a2",
-    "null_byte_ratio": 0.0036,
+    "sha256": "4c85cb008f831830a02d0809f6f9bb726ccd791b16469c996b23aad0964caf83",
+    "entropy": 7.9956,
+    "printable_ratio": 0.3825,
+    "magic_hex": "195fb69f04e55afcd4fa892767486c6d",
+    "null_byte_ratio": 0.0039,
     "segment_entropies": [
       {
         "index": 0,
         "start": 0,
         "end": 11852,
-        "entropy": 7.9876,
-        "printable_ratio": 0.3851
+        "entropy": 7.9851,
+        "printable_ratio": 0.3824
       },
       {
         "index": 1,
         "start": 11852,
         "end": 23704,
-        "entropy": 7.9875,
-        "printable_ratio": 0.3849
+        "entropy": 7.9848,
+        "printable_ratio": 0.3824
       },
       {
         "index": 2,
         "start": 23704,
         "end": 35556,
-        "entropy": 7.9854,
-        "printable_ratio": 0.3794
+        "entropy": 7.9866,
+        "printable_ratio": 0.3826
       },
       {
         "index": 3,
         "start": 35556,
         "end": 47410,
-        "entropy": 7.9837,
-        "printable_ratio": 0.3842
+        "entropy": 7.9856,
+        "printable_ratio": 0.3826
       }
     ],
     "candidate_offsets": {
+      "gzip": [
+        8314,
+        35394
+      ],
       "zlib": [
-        8953
+        39009
       ]
     },
     "version_hints": [],
     "signatures": [
       {
+        "kind": "gzip",
+        "offset": 8314,
+        "description": "GZIP compressed stream",
+        "confidence": 0.7
+      },
+      {
+        "kind": "gzip",
+        "offset": 35394,
+        "description": "GZIP compressed stream",
+        "confidence": 0.7
+      },
+      {
         "kind": "zlib",
-        "offset": 8953,
+        "offset": 39009,
         "description": "Zlib compressed block",
         "confidence": 0.7
       }
@@ -88,9 +104,9 @@
           "Zlib decompression failed: Error -3 while decompressing data: incorrect header check"
         ],
         "debug_info": {
-          "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293",
-          "xor_hex_preview": "e0a76d8e013996d49994056087472c81dbf2f4ed5c8244d4d6e61d6ba08ef0b4916197a1a3120bc449b44a045d1dfada59291b119175c1f0c9cd5b85bf02a660",
-          "zlib_hex_preview": "013996d49994056087472c81dbf2f4ed5c8244d4d6e61d6ba08ef0b4916197a1a3120bc449b44a045d1dfada59291b119175c1f0c9cd5b85bf02a6600204c401"
+          "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+          "xor_hex_preview": "2b6e86b02ac876d7fed3a100416d484e62fb9df052827bd284212c070052375b47ccb2ec6619539862bb7c8745a0e58246e0b6a6ca5f1602402ebe2fdca772b4",
+          "zlib_hex_preview": "2ac876d7fed3a100416d484e62fb9df052827bd284212c070052375b47ccb2ec6619539862bb7c8745a0e58246e0b6a6ca5f1602402ebe2fdca772b4d6931a1e"
         }
       },
       {
@@ -103,7 +119,7 @@
           "File does not begin with XML content."
         ],
         "debug_info": {
-          "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293",
+          "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
           "text_encoding": "latin-1"
         }
       },
@@ -117,8 +133,11 @@
           "No gzip-compressed XML payload found by carving strategy."
         ],
         "debug_info": {
-          "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293",
-          "attempted_offsets": []
+          "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+          "attempted_offsets": [
+            8314,
+            35394
+          ]
         }
       },
       {
@@ -131,11 +150,11 @@
           "No zlib-compressed XML payload found by carving strategy."
         ],
         "debug_info": {
-          "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293",
+          "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
           "attempted_offsets": [
-            8953,
-            27484,
-            37798
+            4668,
+            39009,
+            7404
           ]
         }
       },
@@ -149,7 +168,7 @@
           "No XML-bearing single-byte XOR transform was detected."
         ],
         "debug_info": {
-          "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293"
+          "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647"
         }
       }
     ]
@@ -165,9 +184,9 @@
         "Zlib decompression failed: Error -3 while decompressing data: incorrect header check"
       ],
       "debug_info": {
-        "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293",
-        "xor_hex_preview": "e0a76d8e013996d49994056087472c81dbf2f4ed5c8244d4d6e61d6ba08ef0b4916197a1a3120bc449b44a045d1dfada59291b119175c1f0c9cd5b85bf02a660",
-        "zlib_hex_preview": "013996d49994056087472c81dbf2f4ed5c8244d4d6e61d6ba08ef0b4916197a1a3120bc449b44a045d1dfada59291b119175c1f0c9cd5b85bf02a6600204c401"
+        "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "xor_hex_preview": "2b6e86b02ac876d7fed3a100416d484e62fb9df052827bd284212c070052375b47ccb2ec6619539862bb7c8745a0e58246e0b6a6ca5f1602402ebe2fdca772b4",
+        "zlib_hex_preview": "2ac876d7fed3a100416d484e62fb9df052827bd284212c070052375b47ccb2ec6619539862bb7c8745a0e58246e0b6a6ca5f1602402ebe2fdca772b4d6931a1e"
       }
     },
     {
@@ -180,7 +199,7 @@
         "File does not begin with XML content."
       ],
       "debug_info": {
-        "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293",
+        "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
         "text_encoding": "latin-1"
       }
     },
@@ -194,8 +213,11 @@
         "No gzip-compressed XML payload found by carving strategy."
       ],
       "debug_info": {
-        "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293",
-        "attempted_offsets": []
+        "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
+        "attempted_offsets": [
+          8314,
+          35394
+        ]
       }
     },
     {
@@ -208,11 +230,11 @@
         "No zlib-compressed XML payload found by carving strategy."
       ],
       "debug_info": {
-        "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293",
+        "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647",
         "attempted_offsets": [
-          8953,
-          27484,
-          37798
+          4668,
+          39009,
+          7404
         ]
       }
     },
@@ -226,7 +248,7 @@
         "No XML-bearing single-byte XOR transform was detected."
       ],
       "debug_info": {
-        "raw_hex_preview": "d2965da12f14baffb3bd2d47a16208a2f9d3d4f2429f58cfccff057cb69be4a7837087aead1f07cf43bd42035b18fed95b281bee6f883d0b3334a37249f75293"
+        "raw_hex_preview": "195fb69f04e55afcd4fa892767486c6d40dabdef4c9f67c99e3834101647234855dda2e368145f9368b2748043a5e18144e1b65934a2eaf9bad746d82a528647"
       }
     }
   ],
@@ -236,144 +258,105 @@
       {
         "id": "text_0001",
         "source_type": "file",
-        "offset": 8718,
-        "length": 8,
+        "offset": 1316,
+        "length": 10,
         "classification": "text",
         "encoding": "utf-8",
         "confidence": 0.3,
-        "preview": "Y65i2Q<",
-        "text": "\rY65i2Q<",
-        "raw_hex_preview": "0d5936356932513c",
+        "preview": ";eCv]=j+MU",
+        "text": ";eCv]=j+MU",
+        "raw_hex_preview": "3b6543765d3d6a2b4d55",
         "metadata": {}
       },
       {
         "id": "text_0002",
         "source_type": "file",
-        "offset": 9077,
+        "offset": 8539,
         "length": 8,
         "classification": "text",
         "encoding": "utf-8",
         "confidence": 0.3,
-        "preview": "#0?xs5i",
-        "text": "#0?xs5i ",
-        "raw_hex_preview": "23303f7873356920",
+        "preview": "Ell=V06B",
+        "text": "Ell=V06B",
+        "raw_hex_preview": "456c6c3d56303642",
         "metadata": {}
       },
       {
         "id": "text_0003",
         "source_type": "file",
-        "offset": 9813,
+        "offset": 8690,
         "length": 8,
         "classification": "text",
         "encoding": "utf-8",
         "confidence": 0.3,
-        "preview": "_(b~cS;F",
-        "text": "_(b~cS;F",
-        "raw_hex_preview": "5f28627e63533b46",
+        "preview": ")nVt+![g",
+        "text": ")nVt+![g",
+        "raw_hex_preview": "296e56742b215b67",
         "metadata": {}
       },
       {
         "id": "text_0004",
         "source_type": "file",
-        "offset": 18377,
-        "length": 8,
+        "offset": 9591,
+        "length": 9,
         "classification": "text",
         "encoding": "utf-8",
         "confidence": 0.3,
-        "preview": "^[m`4UFY",
-        "text": "^[m`4UFY",
-        "raw_hex_preview": "5e5b6d6034554659",
+        "preview": "MLN('<Jr5",
+        "text": "MLN('<Jr5",
+        "raw_hex_preview": "4d4c4e28273c4a7235",
         "metadata": {}
       },
       {
         "id": "text_0005",
         "source_type": "file",
-        "offset": 19719,
-        "length": 10,
+        "offset": 27173,
+        "length": 9,
         "classification": "text",
         "encoding": "utf-8",
         "confidence": 0.3,
-        "preview": "?OJEXARaFb",
-        "text": "?OJEXARaFb",
-        "raw_hex_preview": "3f4f4a45584152614662",
+        "preview": "jb42nRCUT",
+        "text": "jb42nRCUT",
+        "raw_hex_preview": "6a6234326e52435554",
         "metadata": {}
       },
       {
         "id": "text_0006",
         "source_type": "file",
-        "offset": 19742,
-        "length": 9,
+        "offset": 33854,
+        "length": 8,
         "classification": "text",
         "encoding": "utf-8",
         "confidence": 0.3,
-        "preview": "Xg^1&TsvA",
-        "text": "Xg^1&TsvA",
-        "raw_hex_preview": "58675e312654737641",
+        "preview": "P{36W]p*",
+        "text": "P{36W]p*",
+        "raw_hex_preview": "507b3336575d702a",
         "metadata": {}
       },
       {
         "id": "text_0007",
         "source_type": "file",
-        "offset": 20063,
-        "length": 9,
+        "offset": 35550,
+        "length": 8,
         "classification": "text",
         "encoding": "utf-8",
         "confidence": 0.3,
-        "preview": "aM{*_t\\e;",
-        "text": "aM{*_t\\e;",
-        "raw_hex_preview": "614d7b2a5f745c653b",
+        "preview": "?1|`o \"",
+        "text": "?1|`o\n\" ",
+        "raw_hex_preview": "3f317c606f0a2220",
         "metadata": {}
       },
       {
         "id": "text_0008",
         "source_type": "file",
-        "offset": 37316,
-        "length": 8,
+        "offset": 44043,
+        "length": 9,
         "classification": "text",
         "encoding": "utf-8",
         "confidence": 0.3,
-        "preview": "2?-v\"wJo",
-        "text": "2?-v\"wJo",
-        "raw_hex_preview": "323f2d7622774a6f",
-        "metadata": {}
-      },
-      {
-        "id": "text_0009",
-        "source_type": "file",
-        "offset": 46137,
-        "length": 8,
-        "classification": "text",
-        "encoding": "utf-8",
-        "confidence": 0.3,
-        "preview": ", }5mH`N",
-        "text": ", }5mH`N",
-        "raw_hex_preview": "2c207d356d48604e",
-        "metadata": {}
-      },
-      {
-        "id": "text_0010",
-        "source_type": "file",
-        "offset": 46152,
-        "length": 8,
-        "classification": "text",
-        "encoding": "utf-8",
-        "confidence": 0.3,
-        "preview": "!rWS@qeH",
-        "text": "!rWS@qeH",
-        "raw_hex_preview": "2172575340716548",
-        "metadata": {}
-      },
-      {
-        "id": "text_0011",
-        "source_type": "file",
-        "offset": 47139,
-        "length": 10,
-        "classification": "text",
-        "encoding": "utf-8",
-        "confidence": 0.3,
-        "preview": "mKMF i/\"cs",
-        "text": "mKMF i/\"cs",
-        "raw_hex_preview": "6d4b4d4620692f226373",
+        "preview": "P(rm[z}yG",
+        "text": "P(rm[z}yG",
+        "raw_hex_preview": "5028726d5b7a7d7947",
         "metadata": {}
       }
     ],
@@ -381,148 +364,109 @@
       {
         "id": "text_0001",
         "source": "file",
-        "offset": 8718,
-        "length": 8,
+        "offset": 1316,
+        "length": 10,
         "encoding": "utf-8",
         "classification": "text",
         "confidence": 0.3,
-        "text": "\rY65i2Q<",
-        "preview": "Y65i2Q<",
-        "raw_hex_preview": "0d5936356932513c",
+        "text": ";eCv]=j+MU",
+        "preview": ";eCv]=j+MU",
+        "raw_hex_preview": "3b6543765d3d6a2b4d55",
         "markers": []
       },
       {
         "id": "text_0002",
         "source": "file",
-        "offset": 9077,
+        "offset": 8539,
         "length": 8,
         "encoding": "utf-8",
         "classification": "text",
         "confidence": 0.3,
-        "text": "#0?xs5i ",
-        "preview": "#0?xs5i",
-        "raw_hex_preview": "23303f7873356920",
+        "text": "Ell=V06B",
+        "preview": "Ell=V06B",
+        "raw_hex_preview": "456c6c3d56303642",
         "markers": []
       },
       {
         "id": "text_0003",
         "source": "file",
-        "offset": 9813,
+        "offset": 8690,
         "length": 8,
         "encoding": "utf-8",
         "classification": "text",
         "confidence": 0.3,
-        "text": "_(b~cS;F",
-        "preview": "_(b~cS;F",
-        "raw_hex_preview": "5f28627e63533b46",
+        "text": ")nVt+![g",
+        "preview": ")nVt+![g",
+        "raw_hex_preview": "296e56742b215b67",
         "markers": []
       },
       {
         "id": "text_0004",
         "source": "file",
-        "offset": 18377,
-        "length": 8,
+        "offset": 9591,
+        "length": 9,
         "encoding": "utf-8",
         "classification": "text",
         "confidence": 0.3,
-        "text": "^[m`4UFY",
-        "preview": "^[m`4UFY",
-        "raw_hex_preview": "5e5b6d6034554659",
+        "text": "MLN('<Jr5",
+        "preview": "MLN('<Jr5",
+        "raw_hex_preview": "4d4c4e28273c4a7235",
         "markers": []
       },
       {
         "id": "text_0005",
         "source": "file",
-        "offset": 19719,
-        "length": 10,
+        "offset": 27173,
+        "length": 9,
         "encoding": "utf-8",
         "classification": "text",
         "confidence": 0.3,
-        "text": "?OJEXARaFb",
-        "preview": "?OJEXARaFb",
-        "raw_hex_preview": "3f4f4a45584152614662",
+        "text": "jb42nRCUT",
+        "preview": "jb42nRCUT",
+        "raw_hex_preview": "6a6234326e52435554",
         "markers": []
       },
       {
         "id": "text_0006",
         "source": "file",
-        "offset": 19742,
-        "length": 9,
+        "offset": 33854,
+        "length": 8,
         "encoding": "utf-8",
         "classification": "text",
         "confidence": 0.3,
-        "text": "Xg^1&TsvA",
-        "preview": "Xg^1&TsvA",
-        "raw_hex_preview": "58675e312654737641",
+        "text": "P{36W]p*",
+        "preview": "P{36W]p*",
+        "raw_hex_preview": "507b3336575d702a",
         "markers": []
       },
       {
         "id": "text_0007",
         "source": "file",
-        "offset": 20063,
-        "length": 9,
+        "offset": 35550,
+        "length": 8,
         "encoding": "utf-8",
         "classification": "text",
         "confidence": 0.3,
-        "text": "aM{*_t\\e;",
-        "preview": "aM{*_t\\e;",
-        "raw_hex_preview": "614d7b2a5f745c653b",
+        "text": "?1|`o\n\" ",
+        "preview": "?1|`o \"",
+        "raw_hex_preview": "3f317c606f0a2220",
         "markers": []
       },
       {
         "id": "text_0008",
         "source": "file",
-        "offset": 37316,
-        "length": 8,
+        "offset": 44043,
+        "length": 9,
         "encoding": "utf-8",
         "classification": "text",
         "confidence": 0.3,
-        "text": "2?-v\"wJo",
-        "preview": "2?-v\"wJo",
-        "raw_hex_preview": "323f2d7622774a6f",
-        "markers": []
-      },
-      {
-        "id": "text_0009",
-        "source": "file",
-        "offset": 46137,
-        "length": 8,
-        "encoding": "utf-8",
-        "classification": "text",
-        "confidence": 0.3,
-        "text": ", }5mH`N",
-        "preview": ", }5mH`N",
-        "raw_hex_preview": "2c207d356d48604e",
-        "markers": []
-      },
-      {
-        "id": "text_0010",
-        "source": "file",
-        "offset": 46152,
-        "length": 8,
-        "encoding": "utf-8",
-        "classification": "text",
-        "confidence": 0.3,
-        "text": "!rWS@qeH",
-        "preview": "!rWS@qeH",
-        "raw_hex_preview": "2172575340716548",
-        "markers": []
-      },
-      {
-        "id": "text_0011",
-        "source": "file",
-        "offset": 47139,
-        "length": 10,
-        "encoding": "utf-8",
-        "classification": "text",
-        "confidence": 0.3,
-        "text": "mKMF i/\"cs",
-        "preview": "mKMF i/\"cs",
-        "raw_hex_preview": "6d4b4d4620692f226373",
+        "text": "P(rm[z}yG",
+        "preview": "P(rm[z}yG",
+        "raw_hex_preview": "5028726d5b7a7d7947",
         "markers": []
       }
     ],
-    "recovered_text_length": 114
+    "recovered_text_length": 83
   },
   "observables": {
     "ip_addresses": [],
@@ -544,16 +488,13 @@
   ],
   "errors": [
     "All deterministic decoder strategies failed",
+    "Failed to decompress candidate payload",
+    "Failed to decompress candidate payload",
     "Failed to decompress candidate payload"
   ],
   "input_container": {
-    "container": "pkz",
+    "container": "file",
     "payload_name": "trial.pkt",
-    "metadata": {
-      "archive_member": "trial.pkt",
-      "compressed_size": 47425,
-      "uncompressed_size": 47410,
-      "member_count": 1
-    }
+    "metadata": {}
   }
 }

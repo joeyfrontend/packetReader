@@ -9,6 +9,7 @@ from .base import DecoderStrategy
 from .direct_xml import DirectXmlDecoder
 from .gzip_carver import GzipCarvingDecoder
 from .legacy_xor_zlib import LegacyXorZlibDecoder
+from .single_byte_xor import SingleByteXorProbeDecoder
 from .zlib_carver import ZlibCarvingDecoder
 
 
@@ -18,6 +19,7 @@ def get_decoder_strategies() -> list[DecoderStrategy]:
         DirectXmlDecoder(),
         GzipCarvingDecoder(),
         ZlibCarvingDecoder(),
+        SingleByteXorProbeDecoder(),
     ]
 
 

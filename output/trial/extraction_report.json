@@ -1,0 +1,491 @@
+{
+  "meta": {
+    "source_file": "trial.pkt",
+    "parser_version": "0.1.0",
+    "generated_at": "2026-04-09T23:16:42.341706Z"
+  },
+  "status": {
+    "success": true,
+    "partial": true,
+    "fatal_error": null
+  },
+  "decode_pipeline": {
+    "path_used": "heuristic_fallback",
+    "deterministic_attempted": true,
+    "deterministic_success": false,
+    "successful_strategy": null,
+    "xml_parse_success": false,
+    "fallback_used": true,
+    "declared_uncompressed_size": null,
+    "decoded_xml_size": null,
+    "attempts": [
+      {
+        "strategy_name": "legacy_xor_zlib",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "Zlib decompression failed: Error -3 while decompressing data: incorrect header check"
+        ]
+      },
+      {
+        "strategy_name": "direct_xml",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "File does not begin with XML content."
+        ]
+      },
+      {
+        "strategy_name": "gzip_carve",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "No gzip-compressed XML payload found by carving strategy."
+        ]
+      },
+      {
+        "strategy_name": "zlib_carve",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "No zlib-compressed XML payload found by carving strategy."
+        ]
+      },
+      {
+        "strategy_name": "single_byte_xor_probe",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "No XML-bearing single-byte XOR transform was detected."
+        ]
+      }
+    ]
+  },
+  "counts": {
+    "signatures_detected": 3,
+    "decoded_chunks": 8,
+    "text_fragments": 8,
+    "device_candidates": 0,
+    "link_candidates": 0,
+    "notes": 0,
+    "unmapped_blocks": 0,
+    "normalized_devices": 0,
+    "normalized_links": 0
+  },
+  "fields_extracted": {
+    "device_names": 0,
+    "device_types": 0,
+    "device_positions": 0,
+    "interface_names": 0,
+    "interface_ips": 0,
+    "config_texts": 0,
+    "link_endpoints": 0
+  },
+  "missing_fields": {
+    "devices_without_name": 0,
+    "devices_without_type": 0,
+    "devices_without_position": 0,
+    "interfaces_without_ip": 0,
+    "links_with_missing_endpoints": 0
+  },
+  "suspicious_sections": [
+    {
+      "kind": "gzip",
+      "count": 2,
+      "reason": "Detected signature requires future reverse-engineering support"
+    },
+    {
+      "kind": "zlib",
+      "count": 1,
+      "reason": "Detected signature requires future reverse-engineering support"
+    }
+  ],
+  "events": {
+    "info": [
+      {
+        "message": "Inspecting input bytes",
+        "context": {
+          "source_file": "trial.pkt",
+          "size_bytes": 47410
+        },
+        "timestamp": "2026-04-09T23:16:38.377714Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial.pkt",
+          "strategy_name": "legacy_xor_zlib"
+        },
+        "timestamp": "2026-04-09T23:16:38.423333Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial.pkt",
+          "strategy_name": "direct_xml"
+        },
+        "timestamp": "2026-04-09T23:16:38.442222Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial.pkt",
+          "strategy_name": "gzip_carve"
+        },
+        "timestamp": "2026-04-09T23:16:38.442521Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial.pkt",
+          "strategy_name": "zlib_carve"
+        },
+        "timestamp": "2026-04-09T23:16:38.442762Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "trial.pkt",
+          "strategy_name": "single_byte_xor_probe"
+        },
+        "timestamp": "2026-04-09T23:16:38.443194Z"
+      },
+      {
+        "message": "No in-band Packet Tracer version hint extracted",
+        "context": {
+          "source_file": "trial.pkt"
+        },
+        "timestamp": "2026-04-09T23:16:42.341308Z"
+      }
+    ],
+    "warnings": [
+      {
+        "message": "High entropy file content detected",
+        "context": {
+          "entropy": 7.9956
+        },
+        "timestamp": "2026-04-09T23:16:38.423101Z"
+      }
+    ],
+    "recoverable_errors": [
+      {
+        "message": "All deterministic decoder strategies failed",
+        "context": {
+          "source_file": "trial.pkt",
+          "attempts": [
+            "legacy_xor_zlib",
+            "direct_xml",
+            "gzip_carve",
+            "zlib_carve",
+            "single_byte_xor_probe"
+          ]
+        },
+        "timestamp": "2026-04-09T23:16:42.309712Z"
+      },
+      {
+        "message": "Failed to decompress candidate payload",
+        "context": {
+          "kind": "gzip",
+          "offset": 8314,
+          "error": "Unknown compression method"
+        },
+        "timestamp": "2026-04-09T23:16:42.340077Z"
+      },
+      {
+        "message": "Failed to decompress candidate payload",
+        "context": {
+          "kind": "gzip",
+          "offset": 35394,
+          "error": "Unknown compression method"
+        },
+        "timestamp": "2026-04-09T23:16:42.340381Z"
+      },
+      {
+        "message": "Failed to decompress candidate payload",
+        "context": {
+          "kind": "zlib",
+          "offset": 39009,
+          "error": "Error -3 while decompressing data: invalid code lengths set"
+        },
+        "timestamp": "2026-04-09T23:16:42.340564Z"
+      }
+    ],
+    "fatal_errors": [],
+    "trace": []
+  },
+  "oracle_validation": {
+    "oracle_available": true,
+    "source_file": "trial.pkt",
+    "oracle_source": "internal_manual_oracle",
+    "packet_tracer_version": "9.0.0",
+    "saved_on_os": "Windows 10 Pro 22H2",
+    "baseline_source_file": null,
+    "vlan_context": "VLAN 1",
+    "notes": [
+      "No router present.",
+      "PCs are in the same subnet.",
+      "Oracle data is for validation only and is never injected into extracted topology output.",
+      "Interface checks only cover explicitly known oracle interfaces and never assume unlabeled Packet Tracer interface numbers."
+    ],
+    "inspection_context": {
+      "entropy": 7.9956,
+      "printable_ratio": 0.3825,
+      "candidate_offsets": {
+        "gzip": [
+          8314,
+          35394
+        ],
+        "zlib": [
+          39009
+        ]
+      }
+    }
+  },
+  "expected_vs_found": {
+    "devices": {
+      "expected_count": 4,
+      "found_count": 0,
+      "expected_names": [
+        "Switch0",
+        "Switch1",
+        "PC0",
+        "PC1"
+      ],
+      "found_names": []
+    },
+    "interfaces": {
+      "expected_count": 0,
+      "found_count": 0,
+      "expected": [],
+      "found": []
+    },
+    "links": {
+      "expected_count": 3,
+      "found_count": 0,
+      "expected": [
+        [
+          "PC0",
+          "Switch0"
+        ],
+        [
+          "Switch0",
+          "Switch1"
+        ],
+        [
+          "PC1",
+          "Switch1"
+        ]
+      ],
+      "found": []
+    },
+    "ips": {
+      "expected_count": 2,
+      "found_count": 0,
+      "expected": [
+        {
+          "device": "PC0",
+          "ip": "192.168.1.1"
+        },
+        {
+          "device": "PC1",
+          "ip": "192.168.1.2"
+        }
+      ],
+      "found": []
+    },
+    "subnets": {
+      "expected_count": 2,
+      "found_count": 0,
+      "expected": [
+        {
+          "device": "PC0",
+          "subnet": "192.168.1.0/24"
+        },
+        {
+          "device": "PC1",
+          "subnet": "192.168.1.0/24"
+        }
+      ],
+      "found": []
+    },
+    "device_types_models": [
+      {
+        "device": "Switch0",
+        "expected_type": "switch",
+        "found_type": null,
+        "expected_model": "Cisco 2960-24TT",
+        "found_model": null
+      },
+      {
+        "device": "Switch1",
+        "expected_type": "switch",
+        "found_type": null,
+        "expected_model": "Cisco 2960-24TT",
+        "found_model": null
+      },
+      {
+        "device": "PC0",
+        "expected_type": "pc",
+        "found_type": null,
+        "expected_model": "PC-PT",
+        "found_model": null
+      },
+      {
+        "device": "PC1",
+        "expected_type": "pc",
+        "found_type": null,
+        "expected_model": "PC-PT",
+        "found_model": null
+      }
+    ]
+  },
+  "missing_expected_entities": {
+    "devices": [
+      {
+        "name": "Switch0",
+        "expected_type": "switch",
+        "expected_model": "Cisco 2960-24TT",
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "name": "Switch1",
+        "expected_type": "switch",
+        "expected_model": "Cisco 2960-24TT",
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "name": "PC0",
+        "expected_type": "pc",
+        "expected_model": "PC-PT",
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "name": "PC1",
+        "expected_type": "pc",
+        "expected_model": "PC-PT",
+        "likely_failure_stage": "decode stage"
+      }
+    ],
+    "interfaces": [],
+    "links": [
+      {
+        "endpoints": [
+          "PC0",
+          "Switch0"
+        ],
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "endpoints": [
+          "Switch0",
+          "Switch1"
+        ],
+        "likely_failure_stage": "decode stage"
+      },
+      {
+        "endpoints": [
+          "PC1",
+          "Switch1"
+        ],
+        "likely_failure_stage": "decode stage"
+      }
+    ]
+  },
+  "unexpected_extracted_entities": {
+    "devices": [],
+    "interfaces": [],
+    "links": [],
+    "ips": []
+  },
+  "missing_expected_fields": [
+    {
+      "entity": "Switch0",
+      "field": "type",
+      "expected": "switch",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Switch0",
+      "field": "model",
+      "expected": "Cisco 2960-24TT",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Switch1",
+      "field": "type",
+      "expected": "switch",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "Switch1",
+      "field": "model",
+      "expected": "Cisco 2960-24TT",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC0",
+      "field": "type",
+      "expected": "pc",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC0",
+      "field": "model",
+      "expected": "PC-PT",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC0",
+      "field": "ip",
+      "expected": "192.168.1.1",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC0",
+      "field": "subnet",
+      "expected": "192.168.1.0/24",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC1",
+      "field": "type",
+      "expected": "pc",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC1",
+      "field": "model",
+      "expected": "PC-PT",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC1",
+      "field": "ip",
+      "expected": "192.168.1.2",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    },
+    {
+      "entity": "PC1",
+      "field": "subnet",
+      "expected": "192.168.1.0/24",
+      "found": null,
+      "likely_failure_stage": "decode stage"
+    }
+  ]
+}

@@ -26,6 +26,7 @@ Optional debug and helper outputs:
 - `output/debug/decoded.xml` when deterministic `.pkt` decoding succeeds in `--debug` mode
 - `output/debug/` intermediate decoded chunks and decompressed payloads from the fallback heuristic scanner when `--debug` is enabled
 - `output/recovered_text.txt` when `--strings` is enabled
+- `output/investigation/` pairwise trial-family binary diff reports when running `app.investigation.binary_diff`
 
 ## Quick Start
 
@@ -45,6 +46,12 @@ Run tests:
 
 ```bash
 python -m unittest discover -s tests -v
+```
+
+Run the trial-family binary investigation pass:
+
+```bash
+python -m app.investigation.binary_diff --out output/investigation --pretty
 ```
 
 ## CLI Options

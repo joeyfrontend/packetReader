@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-04-09T23:36:26.764809Z",
+  "pair_reports": {
+    "trial_vs_ipchange": "trial_vs_ipchange.json",
+    "trial_vs_router": "trial_vs_router.json",
+    "ipchange_vs_router": "ipchange_vs_router.json"
+  },
+  "investigator_summary": {
+    "likely_pc1_ip_change_regions": [
+      {
+        "left_start_offset": 0,
+        "right_start_offset": 0,
+        "candidate_type": "unknown",
+        "left_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "right_strings": [
+          "6m:;",
+          "xm)cQD",
+          "\"\\Xy"
+        ]
+      },
+      {
+        "left_start_offset": 5,
+        "right_start_offset": 23724,
+        "candidate_type": "unknown",
+        "left_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "right_strings": [
+          "f^+<m",
+          "sm}\\2",
+          "gp\"jyZ"
+        ]
+      },
+      {
+        "left_start_offset": 6,
+        "right_start_offset": 23862,
+        "candidate_type": "unknown",
+        "left_strings": [
+          "'gHlm@",
+          "G#HU",
+          "8eWz$"
+        ],
+        "right_strings": [
+          "RZfoF",
+          "#^G0",
+          ":N-0"
+        ]
+      }
+    ],
+    "likely_router_insertion_regions": [
+      {
+        "left_start_offset": 0,
+        "right_start_offset": 0,
+        "candidate_type": "topology_payload",
+        "size": 6092
+      },
+      {
+        "left_start_offset": 2,
+        "right_start_offset": 6094,
+        "candidate_type": "compressed_payload",
+        "size": 902
+      },
+      {
+        "left_start_offset": 4,
+        "right_start_offset": 6998,
+        "candidate_type": "topology_payload",
+        "size": 4477
+      }
+    ],
+    "change_pattern_hypothesis": {
+      "trial_vs_ipchange": "one_monolithic_encoded_payload",
+      "trial_vs_router": "one_monolithic_encoded_payload",
+      "ipchange_vs_router": "one_monolithic_encoded_payload"
+    },
+    "overall_structure_assessment": "one_monolithic_encoded_payload",
+    "next_decoder_hypothesis": "The evidence still allows a whole-file encoded payload. Next, test chunk tables, length-prefixed sections, or versioned container records before adding new topology heuristics."
+  }
+}
