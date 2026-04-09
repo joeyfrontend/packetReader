@@ -5,7 +5,7 @@ from collections import Counter
 from typing import Any
 
 from . import __version__
-from .models import DecodeResult, ExtractionResult, InspectionResult, ReportEvent
+from .models import DecodeResult, DecodedPktResult, ExtractionResult, InspectionResult, ReportEvent, XmlParseResult
 from .utils import current_timestamp
 
 
@@ -69,6 +69,9 @@ class ReportBuilder:
         decode_result: DecodeResult | None,
         extraction: ExtractionResult | None,
         normalized_topology: dict[str, Any] | None,
+        pkt_decode: DecodedPktResult | None,
+        xml_parse: XmlParseResult | None,
+        parser_path: str,
     ) -> dict[str, Any]:
         decoded_chunks = len(decode_result.chunks) if decode_result else 0
         text_fragments = len(decode_result.text_fragments) if decode_result else 0
@@ -165,6 +168,26 @@ class ReportBuilder:
                     (event.message for event in self.events if event.level == "fatal_error"),
                     None,
                 ),
+            },
+            "decode_pipeline": {
+                "path_used": parser_path,
+                "deterministic_attempted": pkt_decode is not None,
+                "deterministic_success": pkt_decode.success if pkt_decode else False,
+                "successful_strategy": pkt_decode.strategy_name if pkt_decode and pkt_decode.success else None,
+                "xml_parse_success": xml_parse.success if xml_parse else False,
+                "fallback_used": parser_path == "heuristic_fallback",
+                "declared_uncompressed_size": pkt_decode.declared_uncompressed_size if pkt_decode else None,
+                "decoded_xml_size": pkt_decode.xml_size_bytes if pkt_decode else None,
+                "attempts": [
+                    {
+                        "strategy_name": attempt.strategy_name,
+                        "success": attempt.success,
+                        "xml_size_bytes": attempt.xml_size_bytes,
+                        "warnings": attempt.warnings,
+                        "errors": attempt.errors,
+                    }
+                    for attempt in (pkt_decode.attempts if pkt_decode else [])
+                ],
             },
             "counts": {
                 "signatures_detected": len(inspection.signatures) if inspection else 0,

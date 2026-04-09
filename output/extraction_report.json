@@ -2,12 +2,60 @@
   "meta": {
     "source_file": "tpospf.pkt",
     "parser_version": "0.1.0",
-    "generated_at": "2026-04-09T21:15:12.322146Z"
+    "generated_at": "2026-04-09T21:50:58.654207Z"
   },
   "status": {
     "success": true,
     "partial": true,
     "fatal_error": null
+  },
+  "decode_pipeline": {
+    "path_used": "heuristic_fallback",
+    "deterministic_attempted": true,
+    "deterministic_success": false,
+    "successful_strategy": null,
+    "xml_parse_success": false,
+    "fallback_used": true,
+    "declared_uncompressed_size": null,
+    "decoded_xml_size": null,
+    "attempts": [
+      {
+        "strategy_name": "legacy_xor_zlib",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "Zlib decompression failed: Error -3 while decompressing data: incorrect header check"
+        ]
+      },
+      {
+        "strategy_name": "direct_xml",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "File does not begin with XML content."
+        ]
+      },
+      {
+        "strategy_name": "gzip_carve",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "No gzip-compressed XML payload found by carving strategy."
+        ]
+      },
+      {
+        "strategy_name": "zlib_carve",
+        "success": false,
+        "xml_size_bytes": null,
+        "warnings": [],
+        "errors": [
+          "No zlib-compressed XML payload found by carving strategy."
+        ]
+      }
+    ]
   },
   "counts": {
     "signatures_detected": 4,
@@ -56,14 +104,46 @@
           "source_file": "tpospf.pkt",
           "size_bytes": 60846
         },
-        "timestamp": "2026-04-09T21:15:12.212667Z"
+        "timestamp": "2026-04-09T21:50:58.592910Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "strategy_name": "legacy_xor_zlib"
+        },
+        "timestamp": "2026-04-09T21:50:58.619094Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "strategy_name": "direct_xml"
+        },
+        "timestamp": "2026-04-09T21:50:58.635967Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "strategy_name": "gzip_carve"
+        },
+        "timestamp": "2026-04-09T21:50:58.636235Z"
+      },
+      {
+        "message": "Attempting decoder strategy",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "strategy_name": "zlib_carve"
+        },
+        "timestamp": "2026-04-09T21:50:58.636437Z"
       },
       {
         "message": "No in-band Packet Tracer version hint extracted",
         "context": {
           "source_file": "tpospf.pkt"
         },
-        "timestamp": "2026-04-09T21:15:12.321416Z"
+        "timestamp": "2026-04-09T21:50:58.653824Z"
       }
     ],
     "warnings": [
@@ -72,10 +152,23 @@
         "context": {
           "entropy": 7.9968
         },
-        "timestamp": "2026-04-09T21:15:12.245273Z"
+        "timestamp": "2026-04-09T21:50:58.618379Z"
       }
     ],
     "recoverable_errors": [
+      {
+        "message": "All deterministic decoder strategies failed",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "attempts": [
+            "legacy_xor_zlib",
+            "direct_xml",
+            "gzip_carve",
+            "zlib_carve"
+          ]
+        },
+        "timestamp": "2026-04-09T21:50:58.637145Z"
+      },
       {
         "message": "Failed to decompress candidate payload",
         "context": {
@@ -83,7 +176,7 @@
           "offset": 15499,
           "error": "Unknown compression method"
         },
-        "timestamp": "2026-04-09T21:15:12.291122Z"
+        "timestamp": "2026-04-09T21:50:58.651125Z"
       },
       {
         "message": "Failed to decompress candidate payload",
@@ -92,7 +185,7 @@
           "offset": 27960,
           "error": "Unknown compression method"
         },
-        "timestamp": "2026-04-09T21:15:12.291528Z"
+        "timestamp": "2026-04-09T21:50:58.651216Z"
       },
       {
         "message": "Failed to decompress candidate payload",
@@ -101,7 +194,7 @@
           "offset": 33611,
           "error": "Unknown compression method"
         },
-        "timestamp": "2026-04-09T21:15:12.297889Z"
+        "timestamp": "2026-04-09T21:50:58.651297Z"
       },
       {
         "message": "Failed to decompress candidate payload",
@@ -110,7 +203,7 @@
           "offset": 39637,
           "error": "Error -3 while decompressing data: invalid code lengths set"
         },
-        "timestamp": "2026-04-09T21:15:12.301386Z"
+        "timestamp": "2026-04-09T21:50:58.651390Z"
       }
     ],
     "fatal_errors": [],
@@ -122,7 +215,7 @@
           "offset": 15499,
           "confidence": 0.7
         },
-        "timestamp": "2026-04-09T21:15:12.238817Z"
+        "timestamp": "2026-04-09T21:50:58.615523Z"
       },
       {
         "message": "Detected signature",
@@ -131,7 +224,7 @@
           "offset": 27960,
           "confidence": 0.7
         },
-        "timestamp": "2026-04-09T21:15:12.239272Z"
+        "timestamp": "2026-04-09T21:50:58.615720Z"
       },
       {
         "message": "Detected signature",
@@ -140,7 +233,7 @@
           "offset": 33611,
           "confidence": 0.7
         },
-        "timestamp": "2026-04-09T21:15:12.239900Z"
+        "timestamp": "2026-04-09T21:50:58.615819Z"
       },
       {
         "message": "Detected signature",
@@ -149,7 +242,62 @@
           "offset": 39637,
           "confidence": 0.7
         },
-        "timestamp": "2026-04-09T21:15:12.241056Z"
+        "timestamp": "2026-04-09T21:50:58.616101Z"
+      },
+      {
+        "message": "Starting legacy XOR decode step",
+        "context": {
+          "source_file": "tpospf.pkt"
+        },
+        "timestamp": "2026-04-09T21:50:58.619220Z"
+      },
+      {
+        "message": "Decoder strategy result",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "strategy_name": "legacy_xor_zlib",
+          "success": false,
+          "errors": [
+            "Zlib decompression failed: Error -3 while decompressing data: incorrect header check"
+          ]
+        },
+        "timestamp": "2026-04-09T21:50:58.636830Z"
+      },
+      {
+        "message": "Decoder strategy result",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "strategy_name": "direct_xml",
+          "success": false,
+          "errors": [
+            "File does not begin with XML content."
+          ]
+        },
+        "timestamp": "2026-04-09T21:50:58.636913Z"
+      },
+      {
+        "message": "Decoder strategy result",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "strategy_name": "gzip_carve",
+          "success": false,
+          "errors": [
+            "No gzip-compressed XML payload found by carving strategy."
+          ]
+        },
+        "timestamp": "2026-04-09T21:50:58.636993Z"
+      },
+      {
+        "message": "Decoder strategy result",
+        "context": {
+          "source_file": "tpospf.pkt",
+          "strategy_name": "zlib_carve",
+          "success": false,
+          "errors": [
+            "No zlib-compressed XML payload found by carving strategy."
+          ]
+        },
+        "timestamp": "2026-04-09T21:50:58.637069Z"
       },
       {
         "message": "Decoded text fragment",
@@ -159,7 +307,7 @@
           "offset": 1197,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.272741Z"
+        "timestamp": "2026-04-09T21:50:58.649254Z"
       },
       {
         "message": "Decoded text fragment",
@@ -169,7 +317,7 @@
           "offset": 1388,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.275379Z"
+        "timestamp": "2026-04-09T21:50:58.649426Z"
       },
       {
         "message": "Decoded text fragment",
@@ -179,7 +327,7 @@
           "offset": 6423,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.278272Z"
+        "timestamp": "2026-04-09T21:50:58.649538Z"
       },
       {
         "message": "Decoded text fragment",
@@ -189,7 +337,7 @@
           "offset": 8430,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.279307Z"
+        "timestamp": "2026-04-09T21:50:58.649647Z"
       },
       {
         "message": "Decoded text fragment",
@@ -199,7 +347,7 @@
           "offset": 10572,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.280608Z"
+        "timestamp": "2026-04-09T21:50:58.649740Z"
       },
       {
         "message": "Decoded text fragment",
@@ -209,7 +357,7 @@
           "offset": 15649,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.281023Z"
+        "timestamp": "2026-04-09T21:50:58.649835Z"
       },
       {
         "message": "Decoded text fragment",
@@ -219,7 +367,7 @@
           "offset": 17824,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.282510Z"
+        "timestamp": "2026-04-09T21:50:58.649932Z"
       },
       {
         "message": "Decoded text fragment",
@@ -229,7 +377,7 @@
           "offset": 18291,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.282898Z"
+        "timestamp": "2026-04-09T21:50:58.650018Z"
       },
       {
         "message": "Decoded text fragment",
@@ -239,7 +387,7 @@
           "offset": 21044,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.284748Z"
+        "timestamp": "2026-04-09T21:50:58.650108Z"
       },
       {
         "message": "Decoded text fragment",
@@ -249,7 +397,7 @@
           "offset": 21856,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.285082Z"
+        "timestamp": "2026-04-09T21:50:58.650199Z"
       },
       {
         "message": "Decoded text fragment",
@@ -259,7 +407,7 @@
           "offset": 27788,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.286104Z"
+        "timestamp": "2026-04-09T21:50:58.650288Z"
       },
       {
         "message": "Decoded text fragment",
@@ -269,7 +417,7 @@
           "offset": 35158,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.286505Z"
+        "timestamp": "2026-04-09T21:50:58.650382Z"
       },
       {
         "message": "Decoded text fragment",
@@ -279,7 +427,7 @@
           "offset": 36358,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.287302Z"
+        "timestamp": "2026-04-09T21:50:58.650477Z"
       },
       {
         "message": "Decoded text fragment",
@@ -289,7 +437,7 @@
           "offset": 44314,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.287911Z"
+        "timestamp": "2026-04-09T21:50:58.650566Z"
       },
       {
         "message": "Decoded text fragment",
@@ -299,7 +447,7 @@
           "offset": 44874,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.288417Z"
+        "timestamp": "2026-04-09T21:50:58.650654Z"
       },
       {
         "message": "Decoded text fragment",
@@ -309,7 +457,7 @@
           "offset": 49395,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.288919Z"
+        "timestamp": "2026-04-09T21:50:58.650749Z"
       },
       {
         "message": "Decoded text fragment",
@@ -319,7 +467,7 @@
           "offset": 50456,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.289383Z"
+        "timestamp": "2026-04-09T21:50:58.650837Z"
       },
       {
         "message": "Decoded text fragment",
@@ -329,7 +477,7 @@
           "offset": 53920,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.289844Z"
+        "timestamp": "2026-04-09T21:50:58.650935Z"
       },
       {
         "message": "Decoded text fragment",
@@ -339,7 +487,7 @@
           "offset": 55282,
           "classification": "text"
         },
-        "timestamp": "2026-04-09T21:15:12.290263Z"
+        "timestamp": "2026-04-09T21:50:58.651022Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -348,7 +496,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.301831Z"
+        "timestamp": "2026-04-09T21:50:58.651496Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -357,7 +505,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.303139Z"
+        "timestamp": "2026-04-09T21:50:58.651646Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -366,7 +514,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.303736Z"
+        "timestamp": "2026-04-09T21:50:58.651775Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -375,7 +523,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.304211Z"
+        "timestamp": "2026-04-09T21:50:58.651890Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -384,7 +532,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.305480Z"
+        "timestamp": "2026-04-09T21:50:58.652013Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -393,7 +541,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.305919Z"
+        "timestamp": "2026-04-09T21:50:58.652130Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -402,7 +550,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.306632Z"
+        "timestamp": "2026-04-09T21:50:58.652249Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -411,7 +559,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.307084Z"
+        "timestamp": "2026-04-09T21:50:58.652373Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -420,7 +568,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.307637Z"
+        "timestamp": "2026-04-09T21:50:58.652493Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -429,7 +577,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.308113Z"
+        "timestamp": "2026-04-09T21:50:58.652611Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -438,7 +586,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.308771Z"
+        "timestamp": "2026-04-09T21:50:58.652728Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -447,7 +595,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.309703Z"
+        "timestamp": "2026-04-09T21:50:58.652843Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -456,7 +604,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.310169Z"
+        "timestamp": "2026-04-09T21:50:58.652958Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -465,7 +613,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.310702Z"
+        "timestamp": "2026-04-09T21:50:58.653074Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -474,7 +622,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.318536Z"
+        "timestamp": "2026-04-09T21:50:58.653192Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -483,7 +631,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.319105Z"
+        "timestamp": "2026-04-09T21:50:58.653311Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -492,7 +640,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.319699Z"
+        "timestamp": "2026-04-09T21:50:58.653454Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -501,7 +649,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.320168Z"
+        "timestamp": "2026-04-09T21:50:58.653578Z"
       },
       {
         "message": "Analyzing text fragment",
@@ -510,7 +658,7 @@
           "classification": "text",
           "source": "file"
         },
-        "timestamp": "2026-04-09T21:15:12.320920Z"
+        "timestamp": "2026-04-09T21:50:58.653703Z"
       }
     ]
   }

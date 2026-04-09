@@ -2,7 +2,16 @@
 
 This project converts a Cisco Packet Tracer `.pkt` file into raw structured JSON that later systems can consume for visualization, validation, search, diffing, or AI-assisted analysis.
 
-The current focus is a defensive extraction pipeline, not perfect fidelity for every Packet Tracer release. `.pkt` is treated as an opaque, version-variable container, so the parser is designed to recover as much useful structure as possible while preserving unknown data for later reverse-engineering.
+The current focus is a deterministic decode pipeline first, with heuristics only as a fallback. For Packet Tracer files that match the known reverse-engineered format, the parser follows the `ptexplorer` decoding model: XOR deobfuscation, 4-byte uncompressed-size header, zlib decompression, XML parse, then structured extraction.
+
+The decoder is now registry-based, so the tool can try multiple deterministic strategies before giving up and falling back:
+
+- legacy XOR + zlib + XML
+- direct XML detection
+- gzip stream carving
+- zlib stream carving
+
+When a `.pkt` file does not match any current deterministic strategy, the project falls back to the heuristic recovery path so extraction still degrades gracefully instead of crashing.
 
 ## What It Produces
 
@@ -14,7 +23,8 @@ By default the CLI writes:
 
 Optional debug and helper outputs:
 
-- `output/debug/` intermediate decoded chunks and decompressed payloads when `--debug` is enabled
+- `output/debug/decoded.xml` when deterministic `.pkt` decoding succeeds in `--debug` mode
+- `output/debug/` intermediate decoded chunks and decompressed payloads from the fallback heuristic scanner when `--debug` is enabled
 - `output/recovered_text.txt` when `--strings` is enabled
 
 ## Quick Start
@@ -53,8 +63,11 @@ python -m unittest discover -s tests -v
 The package is split into extendable stages:
 
 - [`app/cli.py`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/cli.py) command-line entrypoint
+- [`app/decoders/`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/decoders) pluggable deterministic decoder strategies and registry
 - [`app/inspector.py`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/inspector.py) file metadata, signatures, entropy, version hints
-- [`app/decoder.py`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/decoder.py) printable string recovery, XML/config classification, safe decompression attempts
+- [`app/pkt_decoder.py`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/pkt_decoder.py) deterministic Packet Tracer XOR + zlib decode path
+- [`app/xml_parser.py`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/xml_parser.py) XML-first device/interface/link/config extraction
+- [`app/decoder.py`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/decoder.py) fallback printable string recovery, XML/config classification, safe decompression attempts
 - [`app/heuristics.py`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/heuristics.py) device/interface/link/config extraction heuristics
 - [`app/parser.py`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/parser.py) end-to-end orchestration and raw dump assembly
 - [`app/normalizer.py`](/c:/Users/HMI/Desktop/vibeCoding/windowsApps/packetReader/app/normalizer.py) normalized topology schema generation
@@ -75,6 +88,18 @@ The package is split into extendable stages:
 
 ### Stage B: Decoding
 
+Primary path:
+
+- try registered deterministic decoders in order
+- reverse Packet Tracer XOR obfuscation using decreasing file-size keying
+- read the first 4 decoded bytes as the uncompressed XML size header
+- zlib decompress the remaining payload
+- attempt direct XML detection for XML-like files
+- carve gzip or zlib streams that may contain embedded XML
+- decode the XML text and persist `output/debug/decoded.xml` in debug mode when a strategy succeeds
+
+Fallback path:
+
 - printable ASCII/UTF-8/Latin-1 span extraction
 - XML/config/structured-text classification
 - safe attempts to decompress gzip, zlib, bzip2, and zip-like blocks
@@ -82,10 +107,10 @@ The package is split into extendable stages:
 
 ### Stage C: Extraction
 
+- XML-first extraction for Packet Tracer device, interface, config, link, and note structures
 - device candidates
 - interface candidates
 - config text blocks
-- XML-derived nodes and links
 - loose text heuristics for hostnames, interfaces, IPs, and note-like content
 - unmapped blocks retained for follow-up reverse engineering
 
@@ -103,7 +128,8 @@ The package is split into extendable stages:
 Closest-to-source recovered structure before aggressive interpretation:
 
 - inspection metadata
-- decoded chunks and text fragments
+- deterministic decode details and decoded XML when available
+- decoded chunks and text fragments from the fallback path when used
 - observed XML/config fragments
 - raw heuristic observables
 - extracted device/link/note candidates
@@ -126,6 +152,8 @@ Unknown or uncertain values are left as `null`, placeholders, or low-confidence 
 Operational summary of the run:
 
 - success or partial failure
+- decode pipeline path used: deterministic XML or heuristic fallback
+- deterministic strategy attempts with success/failure reasons
 - recognized object counts
 - missing field counts
 - suspicious sections
@@ -134,12 +162,12 @@ Operational summary of the run:
 
 ## Current Limitations
 
-- `.pkt` internals are not officially documented, so support is heuristic-first
-- binary object models are not fully reverse-engineered
-- compressed substructures are only probed using common signatures
-- XML extraction expects decodable fragments and does not yet reconstruct every nested Packet Tracer object type
-- link inference from plain text is intentionally conservative
-- positions, models, and protocol detail may be absent if not directly recoverable
+- the deterministic XOR+zlib path is based on known reverse-engineering work and may not match every Packet Tracer generation
+- current deterministic strategies still do not decode every modern `.pkt` file
+- some `.pkt` files may still require the heuristic fallback path
+- binary object models are not fully reverse-engineered beyond the XML container decode
+- XML extraction is defensive and does not yet reconstruct every nested Packet Tracer object type
+- positions, models, and protocol detail may still be absent if not directly recoverable from XML or config blocks
 
 ## Known Version-Compatibility Risks
 
@@ -149,6 +177,13 @@ Operational summary of the run:
 - some labs may contain mostly binary records, reducing heuristic recovery quality
 
 The extraction report and raw dump are meant to make those differences visible instead of hiding them.
+
+## Reverse-Engineering Reference
+
+The deterministic decode implementation is informed by `axcheron/ptexplorer`, which documents the known Packet Tracer XOR + zlib + size-header format for older `.pkt/.pka` files:
+
+- GitHub repository: https://github.com/axcheron/ptexplorer
+- Reverse-engineering notes: the README describes each byte being XORed with a decreasing file-size key and notes that the first 4 decoded bytes hold the uncompressed XML size
 
 ## Extending The Parser
 

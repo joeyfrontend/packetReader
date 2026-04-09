@@ -2,7 +2,8 @@
   "meta": {
     "source_file": "tpospf.pkt",
     "parser_version": "0.1.0",
-    "parsed_at": "2026-04-09T21:15:12.321912Z"
+    "parsed_at": "2026-04-09T21:50:58.653939Z",
+    "parser_path": "heuristic_fallback"
   },
   "inspection": {
     "source_file": "tpospf.pkt",
@@ -11,6 +12,47 @@
     "entropy": 7.9968,
     "printable_ratio": 0.3831,
     "magic_hex": "5374bac85adaa08b67d4625ab3f0d0cd",
+    "null_byte_ratio": 0.0038,
+    "segment_entropies": [
+      {
+        "index": 0,
+        "start": 0,
+        "end": 15211,
+        "entropy": 7.9882,
+        "printable_ratio": 0.3864
+      },
+      {
+        "index": 1,
+        "start": 15211,
+        "end": 30422,
+        "entropy": 7.9878,
+        "printable_ratio": 0.3858
+      },
+      {
+        "index": 2,
+        "start": 30422,
+        "end": 45633,
+        "entropy": 7.988,
+        "printable_ratio": 0.3823
+      },
+      {
+        "index": 3,
+        "start": 45633,
+        "end": 60846,
+        "entropy": 7.9872,
+        "printable_ratio": 0.3778
+      }
+    ],
+    "candidate_offsets": {
+      "gzip": [
+        15499,
+        27960,
+        33611
+      ],
+      "zlib": [
+        39637
+      ]
+    },
     "version_hints": [],
     "signatures": [
       {
@@ -42,6 +84,164 @@
       "High entropy suggests packed or compressed binary content."
     ]
   },
+  "deterministic_decode": {
+    "source_file": "tpospf.pkt",
+    "success": false,
+    "raw_size_bytes": 60846,
+    "strategy_name": null,
+    "xor_decoded_size_bytes": null,
+    "declared_uncompressed_size": null,
+    "xml_size_bytes": null,
+    "xml_content": null,
+    "xml_preview": null,
+    "used_algorithm": "none",
+    "warnings": [],
+    "errors": [
+      "No deterministic decoder strategy succeeded."
+    ],
+    "debug_info": {},
+    "attempts": [
+      {
+        "strategy_name": "legacy_xor_zlib",
+        "success": false,
+        "xml_size_bytes": null,
+        "xml_preview": null,
+        "warnings": [],
+        "errors": [
+          "Zlib decompression failed: Error -3 while decompressing data: incorrect header check"
+        ],
+        "debug_info": {
+          "raw_hex_preview": "5374bac85adaa08b67d4625ab3f0d0cd0600a62ca2e22eacf96d9c7831db68e30e970843c0c1e89f52c56a2544aa525c225b1a04ee49c9c55622b8296c957c46",
+          "xor_hex_preview": "fdd91663f073082cc171c6f911517052989d3ab7387bb63b6ff808eba34af86c801a84c84a486018d440eea6c62bd2235c26667f9430b1b22057cc5a1ee40c29",
+          "zlib_hex_preview": "f073082cc171c6f911517052989d3ab7387bb63b6ff808eba34af86c801a84c84a486018d440eea6c62bd2235c26667f9430b1b22057cc5a1ee40c292c653f76"
+        }
+      },
+      {
+        "strategy_name": "direct_xml",
+        "success": false,
+        "xml_size_bytes": null,
+        "xml_preview": null,
+        "warnings": [],
+        "errors": [
+          "File does not begin with XML content."
+        ],
+        "debug_info": {
+          "raw_hex_preview": "5374bac85adaa08b67d4625ab3f0d0cd0600a62ca2e22eacf96d9c7831db68e30e970843c0c1e89f52c56a2544aa525c225b1a04ee49c9c55622b8296c957c46",
+          "text_encoding": "latin-1"
+        }
+      },
+      {
+        "strategy_name": "gzip_carve",
+        "success": false,
+        "xml_size_bytes": null,
+        "xml_preview": null,
+        "warnings": [],
+        "errors": [
+          "No gzip-compressed XML payload found by carving strategy."
+        ],
+        "debug_info": {
+          "raw_hex_preview": "5374bac85adaa08b67d4625ab3f0d0cd0600a62ca2e22eacf96d9c7831db68e30e970843c0c1e89f52c56a2544aa525c225b1a04ee49c9c55622b8296c957c46",
+          "attempted_offsets": [
+            15499,
+            27960,
+            33611
+          ]
+        }
+      },
+      {
+        "strategy_name": "zlib_carve",
+        "success": false,
+        "xml_size_bytes": null,
+        "xml_preview": null,
+        "warnings": [],
+        "errors": [
+          "No zlib-compressed XML payload found by carving strategy."
+        ],
+        "debug_info": {
+          "raw_hex_preview": "5374bac85adaa08b67d4625ab3f0d0cd0600a62ca2e22eacf96d9c7831db68e30e970843c0c1e89f52c56a2544aa525c225b1a04ee49c9c55622b8296c957c46",
+          "attempted_offsets": [
+            30043,
+            6662,
+            49136,
+            39637,
+            27011,
+            30672
+          ]
+        }
+      }
+    ]
+  },
+  "decoder_attempts": [
+    {
+      "strategy_name": "legacy_xor_zlib",
+      "success": false,
+      "xml_size_bytes": null,
+      "xml_preview": null,
+      "warnings": [],
+      "errors": [
+        "Zlib decompression failed: Error -3 while decompressing data: incorrect header check"
+      ],
+      "debug_info": {
+        "raw_hex_preview": "5374bac85adaa08b67d4625ab3f0d0cd0600a62ca2e22eacf96d9c7831db68e30e970843c0c1e89f52c56a2544aa525c225b1a04ee49c9c55622b8296c957c46",
+        "xor_hex_preview": "fdd91663f073082cc171c6f911517052989d3ab7387bb63b6ff808eba34af86c801a84c84a486018d440eea6c62bd2235c26667f9430b1b22057cc5a1ee40c29",
+        "zlib_hex_preview": "f073082cc171c6f911517052989d3ab7387bb63b6ff808eba34af86c801a84c84a486018d440eea6c62bd2235c26667f9430b1b22057cc5a1ee40c292c653f76"
+      }
+    },
+    {
+      "strategy_name": "direct_xml",
+      "success": false,
+      "xml_size_bytes": null,
+      "xml_preview": null,
+      "warnings": [],
+      "errors": [
+        "File does not begin with XML content."
+      ],
+      "debug_info": {
+        "raw_hex_preview": "5374bac85adaa08b67d4625ab3f0d0cd0600a62ca2e22eacf96d9c7831db68e30e970843c0c1e89f52c56a2544aa525c225b1a04ee49c9c55622b8296c957c46",
+        "text_encoding": "latin-1"
+      }
+    },
+    {
+      "strategy_name": "gzip_carve",
+      "success": false,
+      "xml_size_bytes": null,
+      "xml_preview": null,
+      "warnings": [],
+      "errors": [
+        "No gzip-compressed XML payload found by carving strategy."
+      ],
+      "debug_info": {
+        "raw_hex_preview": "5374bac85adaa08b67d4625ab3f0d0cd0600a62ca2e22eacf96d9c7831db68e30e970843c0c1e89f52c56a2544aa525c225b1a04ee49c9c55622b8296c957c46",
+        "attempted_offsets": [
+          15499,
+          27960,
+          33611
+        ]
+      }
+    },
+    {
+      "strategy_name": "zlib_carve",
+      "success": false,
+      "xml_size_bytes": null,
+      "xml_preview": null,
+      "warnings": [],
+      "errors": [
+        "No zlib-compressed XML payload found by carving strategy."
+      ],
+      "debug_info": {
+        "raw_hex_preview": "5374bac85adaa08b67d4625ab3f0d0cd0600a62ca2e22eacf96d9c7831db68e30e970843c0c1e89f52c56a2544aa525c225b1a04ee49c9c55622b8296c957c46",
+        "attempted_offsets": [
+          30043,
+          6662,
+          49136,
+          39637,
+          27011,
+          30672
+        ]
+      }
+    }
+  ],
+  "xml_parse": null,
   "decoded": {
     "chunks": [
       {
@@ -562,6 +762,7 @@
     "High entropy file content detected"
   ],
   "errors": [
+    "All deterministic decoder strategies failed",
     "Failed to decompress candidate payload",
     "Failed to decompress candidate payload",
     "Failed to decompress candidate payload",

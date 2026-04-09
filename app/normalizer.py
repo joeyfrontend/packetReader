@@ -41,35 +41,48 @@ def _canonical_interface_name(name: str | None) -> str:
     return compact
 
 
+def _apply_field(existing: dict[str, Any], field: str, value: Any, confidence: float) -> None:
+    if value is None:
+        return
+    scores = existing.setdefault("_field_scores", {})
+    current_score = scores.get(field, -1.0)
+    current_value = existing.get(field)
+    if current_value in (None, "") or confidence >= current_score:
+        existing[field] = value
+        scores[field] = confidence
+
+
 def _merge_interface(existing: dict[str, Any], candidate: InterfaceCandidate) -> None:
-    if candidate.name and not existing.get("name"):
-        existing["name"] = candidate.name
+    _apply_field(existing, "name", candidate.name, candidate.confidence)
     for field in ("ip", "mask", "mac", "status"):
-        if getattr(candidate, field) and not existing.get(field):
-            existing[field] = getattr(candidate, field)
+        _apply_field(existing, field, getattr(candidate, field), candidate.confidence)
     existing["confidence"] = max(existing.get("confidence", 0.0), candidate.confidence)
     existing.setdefault("raw", {"evidence": []})
     existing["raw"]["evidence"].append(candidate.raw)
 
 
 def _merge_device(existing: dict[str, Any], candidate: DeviceCandidate) -> None:
-    if candidate.name and not existing.get("name"):
-        existing["name"] = candidate.name
-    if candidate.device_type and not existing.get("type"):
-        existing["type"] = candidate.device_type
-    if candidate.subtype and not existing.get("subtype"):
-        existing["subtype"] = candidate.subtype
-    if candidate.model and not existing.get("model"):
-        existing["model"] = candidate.model
-    if candidate.config_text and (
-        not existing.get("config_text") or len(candidate.config_text) > len(existing["config_text"])
-    ):
-        existing["config_text"] = candidate.config_text
+    _apply_field(existing, "name", candidate.name, candidate.confidence)
+    _apply_field(existing, "type", candidate.device_type, candidate.confidence)
+    _apply_field(existing, "subtype", candidate.subtype, candidate.confidence)
+    _apply_field(existing, "model", candidate.model, candidate.confidence)
+    if candidate.config_text:
+        config_score = existing.setdefault("_field_scores", {}).get("config_text", -1.0)
+        if (
+            not existing.get("config_text")
+            or candidate.confidence >= config_score
+            or len(candidate.config_text) > len(existing["config_text"])
+        ):
+            existing["config_text"] = candidate.config_text
+            existing.setdefault("_field_scores", {})["config_text"] = candidate.confidence
     position = existing.setdefault("position", {"x": None, "y": None})
-    if candidate.position.get("x") is not None and position.get("x") is None:
+    position_scores = existing.setdefault("_position_scores", {"x": -1.0, "y": -1.0})
+    if candidate.position.get("x") is not None and candidate.confidence >= position_scores.get("x", -1.0):
         position["x"] = candidate.position["x"]
-    if candidate.position.get("y") is not None and position.get("y") is None:
+        position_scores["x"] = candidate.confidence
+    if candidate.position.get("y") is not None and candidate.confidence >= position_scores.get("y", -1.0):
         position["y"] = candidate.position["y"]
+        position_scores["y"] = candidate.confidence
     existing["confidence"] = max(existing.get("confidence", 0.0), candidate.confidence)
     existing.setdefault("raw", {"evidence": []})
     existing["raw"]["evidence"].append(candidate.raw)
@@ -86,6 +99,7 @@ def _merge_device(existing: dict[str, Any], candidate: DeviceCandidate) -> None:
                 "mac": None,
                 "status": None,
                 "confidence": 0.0,
+                "_field_scores": {},
                 "raw": {"evidence": []},
             },
         )
@@ -112,6 +126,8 @@ def normalize_topology(
                 "position": {"x": None, "y": None},
                 "interfaces": [],
                 "_interfaces": {},
+                "_field_scores": {},
+                "_position_scores": {"x": -1.0, "y": -1.0},
                 "config_text": None,
                 "raw": {"evidence": []},
                 "confidence": 0.0,
@@ -134,6 +150,8 @@ def normalize_topology(
             "position": {"x": None, "y": None},
             "interfaces": [],
             "_interfaces": {},
+            "_field_scores": {},
+            "_position_scores": {"x": -1.0, "y": -1.0},
             "config_text": None,
             "raw": {"evidence": [{"placeholder_from_link": True}]},
             "confidence": 0.2,
@@ -155,8 +173,11 @@ def normalize_topology(
         for interface in device.pop("_interfaces").values():
             interface_counter += 1
             interface["id"] = f"int_{interface_counter}"
+            interface.pop("_field_scores", None)
             normalized_interfaces.append(interface)
         device["interfaces"] = normalized_interfaces
+        device.pop("_field_scores", None)
+        device.pop("_position_scores", None)
         normalized_devices.append(device)
 
     link_map: dict[tuple[str, str, str, str, str], dict[str, Any]] = {}

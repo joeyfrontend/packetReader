@@ -24,6 +24,7 @@ VERSION_PATTERNS = [
 
 
 def inspect_bytes(data: bytes, source_file: str, report: ReportBuilder) -> InspectionResult:
+    null_byte_ratio = round(data.count(0) / len(data), 4) if data else 0.0
     report.info("Inspecting input bytes", source_file=source_file, size_bytes=len(data))
     inspection = InspectionResult(
         source_file=source_file,
@@ -32,10 +33,29 @@ def inspect_bytes(data: bytes, source_file: str, report: ReportBuilder) -> Inspe
         entropy=shannon_entropy(data),
         printable_ratio=printable_ratio(data),
         magic_hex=data[:16].hex(),
+        null_byte_ratio=null_byte_ratio,
     )
+
+    if data:
+        segment_count = min(4, max(1, len(data) // 4096))
+        segment_size = max(1, len(data) // segment_count)
+        for index in range(segment_count):
+            start = index * segment_size
+            end = len(data) if index == segment_count - 1 else min(len(data), start + segment_size)
+            chunk = data[start:end]
+            inspection.segment_entropies.append(
+                {
+                    "index": index,
+                    "start": start,
+                    "end": end,
+                    "entropy": shannon_entropy(chunk),
+                    "printable_ratio": printable_ratio(chunk),
+                }
+            )
 
     for signature, kind, description in SIGNATURES:
         search_from = 0
+        offsets: list[int] = []
         while True:
             offset = data.find(signature, search_from)
             if offset < 0:
@@ -55,7 +75,10 @@ def inspect_bytes(data: bytes, source_file: str, report: ReportBuilder) -> Inspe
                 offset=offset,
                 confidence=confidence,
             )
+            offsets.append(offset)
             search_from = offset + 1
+        if offsets:
+            inspection.candidate_offsets[kind] = offsets[:32]
 
     text_probe = data[: min(len(data), 250_000)].decode("latin-1", errors="ignore")
     if "Cisco Packet Tracer" in text_probe or "Packet Tracer" in text_probe:
@@ -79,6 +102,9 @@ def inspect_bytes(data: bytes, source_file: str, report: ReportBuilder) -> Inspe
     if inspection.entropy > 7.6:
         inspection.warnings.append("High entropy suggests packed or compressed binary content.")
         report.warning("High entropy file content detected", entropy=inspection.entropy)
+    if inspection.null_byte_ratio > 0.1:
+        inspection.warnings.append("Significant null-byte ratio suggests a structured binary container.")
+        report.warning("Null-byte-heavy binary structure detected", null_byte_ratio=inspection.null_byte_ratio)
     if inspection.printable_ratio < 0.05:
         inspection.warnings.append("Very low printable ratio; extraction will rely heavily on heuristics.")
         report.warning(

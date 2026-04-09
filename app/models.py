@@ -22,6 +22,9 @@ class InspectionResult:
     entropy: float
     printable_ratio: float
     magic_hex: str
+    null_byte_ratio: float = 0.0
+    segment_entropies: list[dict[str, float | int]] = field(default_factory=list)
+    candidate_offsets: dict[str, list[int]] = field(default_factory=dict)
     version_hints: list[str] = field(default_factory=list)
     signatures: list[SignatureHit] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
@@ -64,6 +67,35 @@ class DecodeResult:
     recovered_text: str = ""
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
+
+
+@dataclass(slots=True)
+class DecoderAttempt:
+    strategy_name: str
+    success: bool
+    xml_size_bytes: int | None = None
+    xml_preview: str | None = None
+    warnings: list[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
+    debug_info: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(slots=True)
+class DecodedPktResult:
+    source_file: str
+    success: bool
+    raw_size_bytes: int
+    strategy_name: str | None = None
+    xor_decoded_size_bytes: int | None = None
+    declared_uncompressed_size: int | None = None
+    xml_size_bytes: int | None = None
+    xml_content: str | None = None
+    xml_preview: str | None = None
+    used_algorithm: str = "xor+zlib"
+    warnings: list[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
+    debug_info: dict[str, Any] = field(default_factory=dict)
+    attempts: list[DecoderAttempt] = field(default_factory=list)
 
 
 @dataclass(slots=True)
@@ -130,6 +162,19 @@ class ExtractionResult:
     observables: dict[str, list[str]] = field(default_factory=dict)
     warnings: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
+
+
+@dataclass(slots=True)
+class XmlParseResult:
+    success: bool
+    root_tag: str | None = None
+    version_hints: list[str] = field(default_factory=list)
+    devices: list[DeviceCandidate] = field(default_factory=list)
+    links: list[LinkCandidate] = field(default_factory=list)
+    notes: list[NoteCandidate] = field(default_factory=list)
+    warnings: list[str] = field(default_factory=list)
+    errors: list[str] = field(default_factory=list)
+    debug_info: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass(slots=True)
